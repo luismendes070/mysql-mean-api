@@ -5,14 +5,14 @@
  
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O projeto Web deve utilizar Angular superior a versão 2;
-- O projeto back-end deverá ser desenvolvido em Node.js;
-- O Front-End deve utilizar Material UI: https://material-ui.com;
+- O projeto back-end deverá ser desenvolvido em Node(JS / TS) ou em PHP;
+- O Front-End deve utilizar Material UI: https://material-ui.com ou https://bulma.io;
 - Os produtos disponíveis no projeto Front-End Angular devem ser recuperados através da API Rest Back-End Node.js;
  
 ## API / Back-End Node.js
  
 - Criar um banco de dados MySQL no Heroku: https://elements.heroku.com/addons/jawsdb
-- Criar uma API REST usando Node.js com o seguintes endpoints:
+- Criar uma API REST usando Node ou PHP com os seguintes endpoints:
  - `GET /`: Detalhes da API
  - `POST /products`: O endpoint irá processar o [products.json](products.json) que será enviado pelo Projeto Web
  - `PUT /products/:productId`: Será responsável por receber atualizações realizadas no Projeto Web
