@@ -7,7 +7,7 @@
 - O projeto Web deve utilizar Angular superior a versão 2;
 - O projeto back-end deverá ser desenvolvido em Node(JS / TS) ou em PHP;
 - O Front-End deve utilizar Material UI: https://material-ui.com ou https://bulma.io;
-- Os produtos disponíveis no projeto Front-End Angular devem ser recuperados através da API Rest Back-End Node.js;
+- Os produtos disponíveis no projeto Front-End Angular devem ser recuperados através da API Rest Back-End Node ou PHP;
  
 ## API / Back-End Node.js
  
