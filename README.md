@@ -1,4 +1,4 @@
-## Desafio 20200630 - Node.js, MySQL & Angular
+## Desafio 20200630 - Back-End: Node ou PHP, MySQL & Angular 2+
  
  
 ### Obrigatório
