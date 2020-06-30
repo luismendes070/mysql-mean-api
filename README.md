@@ -19,8 +19,9 @@
  - `DELETE /products/:productId`: Remover o produto da base
  - `GET /products/:productId`: Obter a informação somente de um produto da base de dados
  - `GET /products`: Listar todos os produtos da base de dados
-- Integrar a API com o banco de dados MongoDB criado no Atlas para persistir os dados
- 
+- Integrar a API com o banco de dados MySQL criado no Heroku para persistir os dados
+- [Diferencial] Usar o MySQL / MariaDB no Docker
+
  
 ## Front-End Angular
  
