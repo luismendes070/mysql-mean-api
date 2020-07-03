@@ -8,6 +8,7 @@
 - O projeto back-end deverá ser desenvolvido em Node(JS / TS) ou em PHP;
 - O Front-End deve utilizar Material UI: https://material-ui.com ou https://bulma.io;
 - Os produtos disponíveis no projeto Front-End Angular devem ser recuperados através da API Rest Back-End Node ou PHP;
+- Fique atento a princípios SOLID, DDD e orientação a objetos;
  
 ## API / Back-End Node.js
  
@@ -20,7 +21,7 @@
  - `GET /products/:productId`: Obter a informação somente de um produto da base de dados
  - `GET /products`: Listar todos os produtos da base de dados
 - Integrar a API com o banco de dados MySQL criado no Heroku para persistir os dados
-- [Diferencial 1] Escrever Unit Tests para os endpoints propostos
+- Escrever Unit Test para o endpoint `POST /products` - Desejável TDD
 - [Diferencial 2] Usar o MySQL / MariaDB no Docker
 
  
@@ -60,7 +61,11 @@ Fazer validação de alguns campos obrigatórios:
  
 Antes de completar a ação de remover produto, devemos perguntar ao usuário se ele realmente 
 quer realizar a ação. Para evitar a remoção de produtos de maneira indesejada. 
-Após remover com êxito, notificar o usuário com um alerta de sucesso.
+Após remover com êxito, notificar o usuário com um alerta de sucesso. 
+
+#### Unit Testing
+ 
+[Desejável] utilizar Unit Test no front-end para a opção de `Remover produto`. 
  
 
 ## Readme do Repositório
