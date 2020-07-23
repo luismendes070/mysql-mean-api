@@ -22,7 +22,7 @@
  - `GET /products`: Listar todos os produtos da base de dados
 - Integrar a API com o banco de dados MySQL criado no Heroku para persistir os dados
 - Escrever Unit Test para o endpoint `POST /products` - Desejável TDD
-- [Diferencial 2] Usar o MySQL / MariaDB no Docker
+- [Diferencial] Usar o MySQL ou MariaDB no Docker
 
  
 ## Front-End Angular
@@ -65,7 +65,7 @@ Após remover com êxito, notificar o usuário com um alerta de sucesso.
 
 #### Unit Testing
  
-[Desejável] utilizar Unit Test no front-end para a opção de `Remover produto`. 
+Utilizar Unit Test no front-end para a opção de `Remover produto`. 
  
 
 ## Readme do Repositório
