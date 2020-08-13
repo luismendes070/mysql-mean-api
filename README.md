@@ -94,8 +94,8 @@ Após remover com êxito, notificar o usuário com um alerta de sucesso.
 
 #### Unit Testing
  
-**Diferencial 1 - Foco em Front-End** utilizar Unit Test no front-end para a opção de `Remover produto`. 
-**Diferencial 2 - Foco em Front-End** utilizar Unit Test no front-end para a opção de `Editar produto`. 
+- **Diferencial 1 - Foco em Front-End** utilizar Unit Test no front-end para a opção de `Remover produto`. 
+- **Diferencial 2 - Foco em Front-End** utilizar Unit Test no front-end para a opção de `Editar produto`. 
  
 ## Readme do Repositório
  
