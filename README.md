@@ -49,7 +49,7 @@ Escrever a documentação da API utlizando conceito [OpenAPI Specification](http
 
 - **Diferencial 1 -** Escrever Unit Test para o endpoint `POST /products`
 - **Diferencial 2 -** Executar o projeto usando Docker
-- **Diferencial 3 -** Escrever o esquema de seguranção aplicado nos endpoints 
+- **Diferencial 3 -** Escrever o esquema de segurança aplicado nos endpoints 
  
 ## Front-End Angular
  
