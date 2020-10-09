@@ -6,7 +6,7 @@
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O projeto Web deve utilizar Angular superior a versão 2;
 - O projeto back-end deverá ser desenvolvido em Node(JS / TS) ou em PHP;
-- O Front-End deve utilizar Material UI: https://material-ui.com ou https://bulma.io;
+- O Front-End deve utilizar Angular Material: https://material.angular.io/ ou https://bulma.io;
 - Os produtos disponíveis no projeto Front-End Angular devem ser recuperados através da API Rest Back-End Node ou PHP;
 - Fique atento a princípios SOLID, DDD e orientação a objetos;
  
