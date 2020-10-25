@@ -1,0 +1,21 @@
+System.InvalidOperationException:
+Failed to set version to docker-desktop: exit code: -1
+ stdout: Configurações do console incompatíveis. Para usar esse recurso, o console herdado deve ser desabilitado.
+ stderr:
+   em Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger log, Int32 expectedExitCode) na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:linha 146
+   em Docker.Engines.WSL2.WSL2Provisioning.<ProvisionAsync>d__8.MoveNext() na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\WSL2Provisioning.cs:linha 82
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Docker.Engines.WSL2.LinuxWSL2Engine.<DoStartAsync>d__25.MoveNext() na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\LinuxWSL2Engine.cs:linha 99
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Docker.ApiServices.StateMachines.TaskExtensions.<WrapAsyncInCancellationException>d__0.MoveNext() na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\TaskExtensions.cs:linha 29
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__5.MoveNext() na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:linha 67
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__5.MoveNext() na C:\workspaces\master\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:linha 92
