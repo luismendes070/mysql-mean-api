@@ -3,6 +3,8 @@ var bodyParser = require("body-parser");
 //var mongodb = require("mongodb");
 //var ObjectID = mongodb.ObjectID;
 
+const API_KEY = '17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4';
+
 var CONTACTS_COLLECTION = "products";
 
 var app = express();
@@ -18,23 +20,23 @@ var connection = mysql.createConnection({
   password : '*5xt#AU4gtjVUsA',
   database : 'desafiodb'
 });
- 
+
 connection.connect();
- 
+
 connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
   console.log('The solution is: ', results[0].solution);
 });
- 
+
 connection.end();
 
 // CONTACTS API ROUTES BELOW
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
+/*  "/api/products"
+ *    GET: finds all products
+ *    POST: creates a new products
  */
 
-app.get("/api/contacts", function(req, res) {
+app.get("/api/products", function(req, res) {
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
@@ -44,7 +46,7 @@ app.get("/api/contacts", function(req, res) {
   });
 });
 
-app.post("/api/contacts", function(req, res) {
+app.post("/api/products", function(req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
 
