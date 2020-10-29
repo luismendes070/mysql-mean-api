@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Product } from './product';
 
-private const productsUrl = 'api/products';  // URL to web api
+const productsUrl = 'api/products';  // URL to web api
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +10,16 @@ private const productsUrl = 'api/products';  // URL to web api
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const products = [
-      { id: 11, name: '' },
-      { id: 12, name: '' },
-      { id: 13, name: '' },
-      { id: 14, name: '' },
-      { id: 15, name: '' },
-      { id: 16, name: '' },
-      { id: 17, name: '' },
-      { id: 18, name: '' },
-      { id: 19, name: '' },
-      { id: 20, name: '' }
+      { id: 11, title: '' },
+      { id: 12, title: '' },
+      { id: 13, title: '' },
+      { id: 14, title: '' },
+      { id: 15, title: '' },
+      { id: 16, title: '' },
+      { id: 17, title: '' },
+      { id: 18, title: '' },
+      { id: 19, title: '' },
+      { id: 20, title: '' }
     ];
     return {products};
   }
