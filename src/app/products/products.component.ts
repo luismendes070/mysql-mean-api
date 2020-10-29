@@ -1,5 +1,7 @@
 import * as http from "http";
 
+import { Product } from './product';
+
 this.productService
   .deleteProduct(product.id)
   .subscribe();

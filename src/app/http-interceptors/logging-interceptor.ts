@@ -1,7 +1,7 @@
 import { finalize, tap } from 'rxjs/operators';
 import { MessageService } from '../message.service';
 import {HttpInterceptor, HttpRequest, HttpResponse} from "@angular/common/http";
-import {HttpHandler} from "./noop-interceptos";
+import {HttpHandler} from "./noop-interceptor";
 import {Injectable} from "@angular/core";
 
 @Injectable()

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Product } from './product';
+//import { Product } from './products/products';
 
 const productsUrl = 'api/products';  // URL to web api
 
