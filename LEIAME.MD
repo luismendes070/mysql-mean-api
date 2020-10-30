@@ -1,4 +1,12 @@
-heroku addons:create jawsdb:kitefin
+heroku addons:create jawsdb:kitefin 
+
+falhando
+
+- ionic new-branch // problema add-test ng serve com e sem docker
+
+- laravel fail branch // get products feito
+
+- ng-products-api // mysql ng restify fullstack
 
 
 
