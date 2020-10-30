@@ -1,12 +1,25 @@
 // Http testing module and mocking controller
 import {
   HttpClientTestingModule,
-  HttpTestingController,
+  HttpTestingController
 } from '@angular/common/http/testing';
 
 // Other imports
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+//import { Product } from '.\product.ts';
+export interface Product {
+  title: string;
+  type: string;
+  description: string;
+  filename: string;
+  height: number;
+  width: number;
+  price: number;
+  rating: number;
+  product_id: number;
+}
 
 describe('HttpClient testing', () => {
   let httpClient: HttpClient;
@@ -25,53 +38,68 @@ describe('HttpClient testing', () => {
 });
 
 it('can test HttpClient.get', () => {
-  const testData: Data = { name: 'Test Data' };
+  const testProduct: Product = {
+    title: 'Asparagus',
+    type: 'vegetable',
+    description: 'Asparagus with ham on the wooden table',
+    filename: '2.jpg',
+    height: 450,
+    width: 299,
+    price: 18.95,
+    rating: 3,
+  };
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+  const testUrl = '/api/products';
 
   // Make an HTTP GET request
-  httpClient.get<Data>(testUrl).subscribe((data) =>
+  httpClient.get<Product>(testUrl).subscribe((data) =>
     // When observable resolves, result should match test data
-    expect(data).toEqual(testData)
+    expect(data).toEqual(testProduct)
   );
 
   // The following `expectOne()` will match the request's URL.
   // If no requests or multiple requests matched that URL
   // `expectOne()` would throw.
-  const req = httpTestingController.expectOne('/data');
+  const req = httpTestingController.expectOne('/products');
 
   // Assert that the request is a GET.
   expect(req.request.method).toEqual('GET');
 
   // Respond with mock data, causing Observable to resolve.
   // Subscribe callback asserts that correct data was returned.
-  req.flush(testData);
+  req.flush(testProduct);
 
   // Finally, assert that there are no outstanding requests.
   httpTestingController.verify();
 });
 
 afterEach(() => {
+  let httpTestingController: HttpTestingController;
   // After every test, assert that there are no more pending requests.
   httpTestingController.verify();
 });
 
 // Expect one request with an authorization header
+let httpTestingController: HttpTestingController;
 const req = httpTestingController.expectOne(
   request => request.headers.has('Authorization')
 );
 
 // get all pending requests that match the given URL
+const testUrl = '/api/products';
 const requests = httpTestingController.match(testUrl);
 expect(requests.length).toEqual(3);
 
 // Respond to each request with different results
 requests[0].flush([]);
-requests[1].flush([testData[0]]);
-requests[2].flush(testData);
+requests[1].flush([testProduct[0]]);
+requests[2].flush(testProduct);
 
 it('can test for 404 error', () => {
   const emsg = 'deliberate 404 error';
-
-  httpClient.get<Data[]>(testUrl).subscribe(
+  let httpClient: HttpClient;
+  httpClient.get<Product[]>(testUrl).subscribe(
     (data) => fail('should have failed with the 404 error'),
     (error: HttpErrorResponse) => {
       expect(error.status).toEqual(404, 'status');

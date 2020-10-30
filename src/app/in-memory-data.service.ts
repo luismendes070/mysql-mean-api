@@ -31,6 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
   genId(products: Product[]): number {
-    return products.length > 0 ? Math.max(...products.map(product => product.id)) + 1 : 11;
+    return products.length > 0 ?
+      Math.max(...products.map(product => product.product_id)) + 1 : 11;
   }
 }
