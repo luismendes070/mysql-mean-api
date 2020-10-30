@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "build": "ng build",
-    "start": "ng serve && webpack-dev-server --mode development --open",
+    "start": "ng serve",
     "ng": "ng",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "webpack": "webpack-dev-server --mode development --open"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
+    "restify": "^8.5.1",
     "rxjs": "~6.6.0",
     "swagger-ui": "^3.36.0",
     "tslib": "^2.0.0",

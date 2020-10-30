@@ -62,3 +62,24 @@ app.post("/api/products", function(req, res) {
     });
   }
 });
+
+var restify = require("restify");
+//curl -is http://localhost:4200/api/products -H 'accept: text/plain'
+
+const server = restify.createServer({
+  name: "products",
+  version: "1.0.0",
+});
+
+server.use(restify.plugins.acceptParser(server.acceptable));
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.bodyParser());
+
+server.get("/api/:name", function (req, res, next) {
+  res.send(req.params);
+  return next();
+});
+
+server.listen(4200, function () {
+  console.log("%s listening at %s", server.name, server.url);
+});
