@@ -306,3 +306,18 @@ svg#clouds {
   border: 1px solid black;
   margin: 0;
 }
+
+.degrauMenor{
+	color : blue;
+	border: 10px solid black;	
+}
+
+.degrauMaior{
+	color : green;
+	border: 100px solid black;	
+}
+
+p.ex1 {
+  border: 1px solid red; 
+  padding-bottom: 25px;
+}

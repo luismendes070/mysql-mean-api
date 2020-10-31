@@ -1,6 +1,9 @@
 
 npm start
 
+docker-compose up -d
+docker-compose up -stop
+
 heroku addons:create jawsdb:kitefin 
 
 falhando
