@@ -286,3 +286,23 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+.debaixoLogo hr{
+  padding: 10px;
+  border: 1px solid black;
+  margin: 0;
+}
+
+.caixaComprida {
+  width: 98%;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 0;
+}
+
+.caixaCurta {
+  width: 320px;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 0;
+}

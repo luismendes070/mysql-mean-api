@@ -13,7 +13,19 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import {httpInterceptorProviders} from "./http-interceptors";
+import { httpInterceptorProviders } from "./http-interceptors";
+
+
+
+//import { NgModule } from '@angular/core';
+//import { CommonModule } from '@angular/common';
+//import { ReactiveFormsModule } from '@angular/forms';
+//import { FormlyModule } from '@ngx-formly/core';
+//import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+
+import { FileValueAccessor } from './file-value-accessor';
+import { FormlyFieldFile } from './file-type.component';
+//import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,20 +40,25 @@ import {httpInterceptorProviders} from "./http-interceptors";
       ],
     }),
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyModule.forRoot({
+      types: [
+        { name: 'file', component: FormlyFieldFile, wrappers: ['form-field'] },
+      ],
+    }),
     FormlyMaterialModule,
     MatButtonModule,
     MatTableModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
-  providers: [
-    httpInterceptorProviders
-  ],
+  declarations: [FileValueAccessor, FormlyFieldFile, AppComponent],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-
 })
 export class AppModule {}

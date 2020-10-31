@@ -1,3 +1,6 @@
+
+npm start
+
 heroku addons:create jawsdb:kitefin 
 
 falhando
