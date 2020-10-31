@@ -37,8 +37,7 @@ describe('HttpClient testing', () => {
   /// Tests begin ///
 });
 
-it('can test HttpClient.get', () => {
-  const testProduct: Product = {
+const testProduct: Product = {
     title: 'Asparagus',
     type: 'vegetable',
     description: 'Asparagus with ham on the wooden table',
@@ -47,15 +46,19 @@ it('can test HttpClient.get', () => {
     width: 299,
     price: 18.95,
     rating: 3,
+	product_id: 0
   };
+
+it('can test HttpClient.get', () => {
+  
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   const testUrl = '/api/products';
 
   // Make an HTTP GET request
-  httpClient.get<Product>(testUrl).subscribe((data) =>
+  httpClient.get<Product>(testUrl).subscribe((product) =>
     // When observable resolves, result should match test data
-    expect(data).toEqual(testProduct)
+    expect(product[2]).toEqual(testProduct)
   );
 
   // The following `expectOne()` will match the request's URL.

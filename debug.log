@@ -17,3 +17,5 @@
 [1028/155059.340:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
 [1028/161044.983:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1029/160622.829:ERROR:settings.cc(325)] Settings version is not 1
+[1030/212318.308:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1031/122049.796:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
