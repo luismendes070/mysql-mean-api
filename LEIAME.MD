@@ -4,6 +4,10 @@ npm start
 docker-compose up -d
 docker-compose up -stop
 
+docker-compose run --publish 80:4200 node bash
+
+ng serve --host 0.0.0.0
+
 heroku addons:create jawsdb:kitefin 
 
 falhando
