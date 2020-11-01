@@ -1,113 +1,52 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-
-
-<!-- Toolbar -->
 <div class="toolbar" role="banner">
-
   <span>LOGO</span>
-    <div class="spacer"></div>
+  <div class="spacer"></div>
 </div>
 
 <div class=".debaixoLogo">
-<hr class=".debaixoLogo">
+  <hr class=".debaixoLogo" />
 </div>
 
-<div class=".caixaCumprida">
-Home {{title}}
-</div>
-
+<div class=".caixaCumprida">Home {{ title }}</div>
 
 <div class=".caixaCurta">
-<p class=".degrauMenor">Lorem ipsum dolor sit amet, consectur adipiscing elit,sed do elusmod tempo incidunt</p>
-<br class=".degrauMaior" class="ex1">ut labore et dolore magna aliqua.</br>
+  <p class=".degrauMenor">
+    Lorem ipsum dolor sit amet, consectur adipiscing elit,sed do elusmod tempo
+    incidunt
+  </p>
+
+  <div class="ex1">ut labore et dolore magna aliqua.</div>
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-  <formly-form 
-  [model]="model" 
-  [fields]="fields" 
-  [options]="options" 
-  [form]="form">
-<label>
-Label
-</label>
-<button>
-Button
-</button>
+  <formly-form
+    [model]="model"
+    [fields]="fields"
+    [options]="options"
+    [form]="form"
+  >
+    <button class=".enviar">Enviar</button>
   </formly-form>
 </form>
 
 <app-form-debug [form]="form.value" [model]="model"></app-form-debug>
 
-ENVIAR
+<label> Title </label>
 
-<mat-button>
-  ENVIAR
-</mat-button>
+<mat-button> ENVIAR mat-button </mat-button>
 
-<div class="content" role="main">
+<span>
+  <app-products>
+    {{ model.title }}
 
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+    {{ model.type }}
 
+    {{ model.description }}
 
+    {{ model.price }}
 
-    
-      
+    {{ model.rating }}
+  </app-products>
+</span>
 
-      <table>
-<td>
-td
-</td>
-<tr>
-tr
-</tr>
-      </table>
-    
-
-    <span>{{ title }}
-      {{ type }}
-      {{ description }}
-      {{ price }}
-      {{ rating }}
-    </span>
-	
-	<nav>
-	External Links
-	</nav>
-
-    
-
-
-
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
+<nav>External Links</nav>

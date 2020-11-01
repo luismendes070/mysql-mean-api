@@ -4,6 +4,7 @@ import {catchError} from "rxjs/operators";
 
 import {HttpHeaders} from '@angular/common/http';
 import {url} from "inspector";
+import { Product } from '../product';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -41,16 +42,16 @@ updateProduct(product:Product): Observable <Product> {
 
 
 /* GET heroes whose name contains search term */
-searchHeroes(term: string): Observable<Hero[]> {
+searchProducts(term: string): Observable<Product[]> {
   term = term.trim();
 
   // Add safe, URL encoded search parameter if there is a search term
   const options = term ?
-   { params: new HttpParams().set('name', term) } : {};
+   { params: new HttpParams().set('title', term) } : {};
 
-  return this.http.get<Hero[]>(this.heroesUrl, options)
+  return this.http.get<Product[]>(this.productsUrl, options)
     .pipe(
-      catchError(this.handleError<Hero[]>('searchHeroes', []))
+      catchError(this.handleError<Product[]>('searchProducts', []))
     );
 }
 

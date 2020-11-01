@@ -23,3 +23,4 @@
 [1031/155855.726:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1031/221527.298:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1031/224020.149:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\luism\AppData\Local\Temp\karma-19614814\Crashpad\attachments\04dfab6b-abee-4688-bd90-cce19310e037: O sistema não pode encontrar o caminho especificado. (0x3)
+[1031/225701.753:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)

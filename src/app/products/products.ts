@@ -1,11 +1,11 @@
 {
-  "title": 'products';
-  "type": '';
-  "description": '';
-  "filename": '';
-  "height": double;
-  "width": double;
-  "price": double;
-  "rating": integer;
-
+  "title": string;
+  "type": string;
+  "description": string;
+  "filename": string;
+  "height": number;
+  "width": number;
+  "price": number;
+  "rating": number;
+  "product_id": number;
 }
