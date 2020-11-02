@@ -7,7 +7,7 @@
   <hr class=".debaixoLogo" />
 </div>
 
-<div class=".caixaCumprida">Home {{ title }}</div>
+<div class=".caixaCumprida">Home {{ model.title }}</div>
 
 <div class=".caixaCurta">
   <p class=".degrauMenor">
@@ -17,6 +17,9 @@
 
   <div class="ex1">ut labore et dolore magna aliqua.</div>
 </div>
+
+<input type="checkbox" id="uploader" [checked]="showUploader" (click)="toggleUploader()">
+<label for="uploader">Uploader</label>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
   <formly-form

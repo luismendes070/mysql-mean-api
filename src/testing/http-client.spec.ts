@@ -115,3 +115,36 @@ it('can test for 404 error', () => {
   // Respond with mock error
   req.flush(emsg, { status: 404, statusText: 'Not Found' });
 });
+
+it('stackoverflow bodyparser verify', () => {
+  var express = require('express');
+  const bodyParser = require('body-parser');
+  
+  var app = express();
+
+// create application/json parser
+app.use(bodyParser.json());
+
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: false }));
+fail(true);
+});
+
+it('interceptor', () => {
+
+  //const ensure = require('src\\app\\http-interceptors\\ensure-http-interceptors');
+  //ensure.
+  fail(true);
+ });
+ 
+ it('should input forms', () => {
+  fail(true);
+ });
+ 
+ it('should upload json', () => {
+  fail(true);
+ });
+ 
+ it('should render an image', () => {
+  fail(true);
+ });

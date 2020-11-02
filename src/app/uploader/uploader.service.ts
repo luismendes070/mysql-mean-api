@@ -1,3 +1,5 @@
+    import {HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
+    import {catchError, last, map, tap} from "rxjs/internal/operators";
     const req = new HttpRequest('POST', '/upload/file', file, {
       reportProgress: true,
     });
