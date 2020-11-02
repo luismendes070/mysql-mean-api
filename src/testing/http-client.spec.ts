@@ -118,7 +118,7 @@ it('can test for 404 error', () => {
 
 it('stackoverflow bodyparser verify', () => {
   
-  const server = require('server');
+  const server = require('server.js');
 
 fail(true);
 });
