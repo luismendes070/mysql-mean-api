@@ -117,16 +117,9 @@ it('can test for 404 error', () => {
 });
 
 it('stackoverflow bodyparser verify', () => {
-  var express = require('express');
-  const bodyParser = require('body-parser');
   
-  var app = express();
+  const server = require('server');
 
-// create application/json parser
-app.use(bodyParser.json());
-
-// create application/x-www-form-urlencoded parser
-app.use(bodyParser.urlencoded({ extended: false }));
 fail(true);
 });
 

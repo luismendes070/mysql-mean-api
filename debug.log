@@ -42,3 +42,5 @@
 [1101/163222.393:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\luism\AppData\Local\Temp\karma-40009542\Crashpad\attachments\a5706427-0f9a-4f51-b222-7f38c098abdd: O sistema não pode encontrar o caminho especificado. (0x3)
 [1101/164509.031:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1101/172106.153:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1102/035139.905:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1102/042418.419:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\luism\AppData\Local\Temp\karma-27264887\Crashpad\attachments\9741536d-5e83-4b76-afab-b95d0b15e87c: O sistema não pode encontrar o caminho especificado. (0x3)

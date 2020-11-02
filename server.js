@@ -10,6 +10,9 @@ var CONTACTS_COLLECTION = "products";
 var app = express();
 app.use(bodyParser.json());
 
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
@@ -19,6 +22,13 @@ var connection = mysql.createConnection({
   user     : 'desafiofullstack',
   password : '*5xt#AU4gtjVUsA',
   database : 'desafiodb'
+});
+
+connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'api_fullstack_challenge'
 });
 
 connection.connect();
