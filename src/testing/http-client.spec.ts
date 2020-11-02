@@ -118,7 +118,8 @@ it('can test for 404 error', () => {
 
 it('stackoverflow bodyparser verify', () => {
   
-  const server = require('server.js');
+  //const server = require('server.js');
+  
 
 fail(true);
 });
@@ -139,5 +140,15 @@ it('interceptor', () => {
  });
  
  it('should render an image', () => {
+  fail(true);
+ });
+
+ it('webpack', () => {
+  fail(true);
+ });
+
+it('localhost wamp mysql server version', () => {
+  const sql = 'select version()';
+
   fail(true);
  });

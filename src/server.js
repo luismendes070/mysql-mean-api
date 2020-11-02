@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'db4free.net',
   user     : 'desafiofullstack',
@@ -32,6 +32,8 @@ connection = mysql.createConnection({
 });
 
 connection.connect();
+
+console.log('connection connected...');
 
 connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
