@@ -1,9 +1,14 @@
 FROM node:latest as angular
-WORKDIR /app
-COPY package.json /code/package.json
+
+WORKDIR /usr/src/app
+COPY package*.json 
+
 RUN npm install --silent
 COPY . .
 RUN NPM run build
+
+# Specify port app runs on
+EXPOSE 3000
 
 # docs
 # FROM nginx
