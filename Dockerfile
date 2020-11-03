@@ -1,7 +1,7 @@
 FROM node:latest as angular
 
 WORKDIR /usr/src/app
-COPY package*.json 
+COPY package*.json /code/package.json
 
 RUN npm install --silent
 COPY . .
