@@ -128,6 +128,8 @@ requests[2].flush(testProduct);
 it('stackoverflow bodyparser verify', () => {
   
   //const server = require('server.js');
+
+  var bodyParser = require('body-parser');
   
 
 fail(true);
@@ -137,6 +139,7 @@ it('interceptor', () => {
 
   //const ensure = require('src\\app\\http-interceptors\\ensure-http-interceptors');
   //ensure.
+  //var interceptor = require('');
   fail(true);
  });
  
