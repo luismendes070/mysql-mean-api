@@ -11,6 +11,7 @@ ng serve --host 0.0.0.0
 heroku container:login
 heroku ps:scale web=3
 
+Mocha GNU Make ou Cygwin
 
 
 heroku addons:create jawsdb:kitefin 

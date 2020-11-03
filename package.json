@@ -5,10 +5,11 @@
     "build": "webpack --config prod.config.js",
     "start": "ng serve",
     "ng": "ng",
-    "test": "ng test",
+    "test": "mocha",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prettier":"ng prettier"
+    "prettier": "ng prettier",
+    "mocha": "./node_modules/mocha/bin/mocha"
   },
   "private": true,
   "dependencies": {
@@ -60,7 +61,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "mocha": "^8.2.0",
+    "mocha": "^8.2.1",
     "mocha-loader": "^5.1.5",
     "nodemon": "^2.0.6",
     "protractor": "~7.0.0",
