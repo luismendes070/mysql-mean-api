@@ -7,6 +7,9 @@ import {
 // Other imports
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { fail } from 'assert';
+
+import 'jasmine';
 
 //import { Product } from '.\product.ts';
 export interface Product {
@@ -83,9 +86,13 @@ afterEach(() => {
   httpTestingController.verify();
 });
 
+
+
+it('can test for 404 error', () => {
+
 // Expect one request with an authorization header
 let httpTestingController: HttpTestingController;
-const req = httpTestingController.expectOne(
+const req2 = httpTestingController.expectOne(
   request => request.headers.has('Authorization')
 );
 
@@ -99,7 +106,9 @@ requests[0].flush([]);
 requests[1].flush([testProduct[0]]);
 requests[2].flush(testProduct);
 
-it('can test for 404 error', () => {
+
+  
+
   const emsg = 'deliberate 404 error';
   let httpClient: HttpClient;
   httpClient.get<Product[]>(testUrl).subscribe(
