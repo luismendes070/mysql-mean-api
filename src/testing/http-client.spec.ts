@@ -4,14 +4,12 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-// Other imports
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { fail } from 'assert';
 
 import 'jasmine';
 
-//import { Product } from '.\product.ts';
 export interface Product {
   title: string;
   type: string;
@@ -127,9 +125,9 @@ requests[2].flush(testProduct);
 
 it('stackoverflow bodyparser verify', () => {
   
-  //const server = require('server.js');
+  // const server = require('server.js');
 
-  var bodyParser = require('body-parser');
+  let  bodyParser = require('body-parser');
   
 
 fail(true);
@@ -137,9 +135,9 @@ fail(true);
 
 it('interceptor', () => {
 
-  //const ensure = require('src\\app\\http-interceptors\\ensure-http-interceptors');
-  //ensure.
-  //var interceptor = require('');
+  // const ensure = require('src\\app\\http-interceptors\\ensure-http-interceptors');
+  // ensure.
+  // var interceptor = require('');
   fail(true);
  });
  

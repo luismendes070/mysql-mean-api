@@ -1,16 +1,12 @@
 import {
-  Component,
-  OnInit,
-  NgModule,
-  CUSTOM_ELEMENTS_SCHEMA,
+	Component,
+	OnInit,
+	NgModule,
+	CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-
-//import {Product} from './product';
-
-//let product: Product;
 
 @Component({
   selector: 'app-root',

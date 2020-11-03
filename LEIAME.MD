@@ -8,6 +8,11 @@ docker-compose run --publish 80:4200 node bash
 
 ng serve --host 0.0.0.0
 
+heroku container:login
+heroku ps:scale web=3
+
+
+
 heroku addons:create jawsdb:kitefin 
 
 falhando
