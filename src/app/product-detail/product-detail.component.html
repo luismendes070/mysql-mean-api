@@ -1,1 +1,26 @@
 <p>product-detail works!</p>
+
+<div *ngIf="product">
+
+  <h2>
+  
+  {{product.title | uppercase}} 
+
+  Details
+  
+  </h2>
+  
+  <div><span>product_id: </span>{{product.product_id}}</div>
+
+  <div>
+    <label>
+
+    title:
+
+      <input [(ngModel)]="product.title" placeholder="title"/>
+
+    </label>
+  </div>
+
+</div>
+

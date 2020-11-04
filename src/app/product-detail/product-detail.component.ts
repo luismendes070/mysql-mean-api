@@ -9,7 +9,7 @@ import { Product } from '../product';
 })
 export class ProductDetailComponent implements OnInit {
   
-  @Input() hero: Product;
+  @Input() product: Product;
 
   constructor() {}
 

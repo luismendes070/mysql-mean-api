@@ -7,12 +7,13 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { fail } from 'assert';
+import { Product } from 'src/app/product';
 
-import app from './server.js';
+// import app from './server.js';
 
 //import 'jasmine';
 
-export interface Product {
+/* export interface Product {
   title: string;
   type: string;
   description: string;
@@ -22,7 +23,7 @@ export interface Product {
   price: number;
   rating: number;
   product_id: number;
-}
+} */
 
 describe('HttpClient testing', () => {
   let httpClient: HttpClient;
@@ -40,7 +41,7 @@ describe('HttpClient testing', () => {
   /// Tests begin ///
 });
 
-const testProduct: Product = {
+ const testProduct: Product = {
     title: 'Asparagus',
     type: 'vegetable',
     description: 'Asparagus with ham on the wooden table',
@@ -50,7 +51,7 @@ const testProduct: Product = {
     price: 18.95,
     rating: 3,
 	product_id: 0
-  };
+  }; 
 
 it('can test HttpClient.get', () => {
   
@@ -132,7 +133,7 @@ it('stackoverflow bodyparser verify', () => {
   //let  bodyParser = require('body-parser');
   
 
-fail(true);
+return fail(true);
 });
 
 it('interceptor', () => {
@@ -140,23 +141,23 @@ it('interceptor', () => {
   // const ensure = require('src\\app\\http-interceptors\\ensure-http-interceptors');
   // ensure.
   // var interceptor = require('');
-  fail(true);
+  return fail(true);
  });
  
  it('should input forms', () => {
-  fail(true);
+  return fail(true);
  });
  
  it('should upload json', () => {
-  fail(true);
+  return fail(true);
  });
  
  it('should render an image', () => {
-  fail(true);
+  return fail(true);
  });
 
  it('webpack', () => {
-  fail(true);
+  return fail(true);
  });
 
 it('localhost wamp mysql server version', () => {
@@ -167,5 +168,5 @@ it('localhost wamp mysql server version', () => {
 // app.get('/products', product.list);
 
 
-  fail(true);
+  return fail(true);
  });
