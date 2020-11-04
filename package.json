@@ -5,12 +5,7 @@
     "build": "webpack --config prod.config.js",
     "start": "ng serve",
     "ng": "ng",
-    "test": [
-      "jest",
-      "mocha",
-      "jasmine",
-      "karma"
-    ],
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prettier": "ng prettier",

@@ -1,4 +1,10 @@
 
+https://lab.coodesh.com/machadoluismendes/challenge-20200630.git
+
+https://github.com/luismendes070/mysql-mean-api
+
+
+
 npm start
 
 docker-compose up -d

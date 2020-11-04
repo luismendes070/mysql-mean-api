@@ -17,17 +17,25 @@ import { Component, OnInit } from '@angular/core';
 // req.subscribe();
 // 2 requests made.
 
+// import { ProductService } from 'products.service.ts';
+
+// import { Component, OnInit } from '@angular/core';
+
+ import { Product } from '../product';
+import { ProductService } from '../product.service';
+import { MessageService } from '../message.service';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  providers: [ProductsService],
+  //providers: [ProductsService],
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
   products: Product[];
   editProduct: Product; // the hero currently being edited
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private messageService: MessageService) {}
 
   ngOnInit() {
     this.getProducts();
@@ -39,17 +47,17 @@ export class ProductsComponent implements OnInit {
       .subscribe((products) => (this.products = products));
   }
 
-  add(name: string): void {
+  add(title: string): void {
     this.editProduct = undefined;
-    name = name.trim();
-    if (!name) {
+    title = title.trim();
+    if (!title) {
       return;
     }
 
     // The server will generate the id for this new hero
-    const newProduct: Product = { name } as Product;
+    const newProduct: Product = { title } as Product;
     this.productsService
-      .addHero(newProduct)
+      .addProduct(newProduct)
       .subscribe((product) => this.products.push(product));
   }
 
