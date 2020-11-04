@@ -1,6 +1,6 @@
 const API_KEY = "17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4";
 
-var CONTACTS_COLLECTION = "products";
+var PRODUCTS_COLLECTION = "products";
 
 var app = express();
 // app.use(bodyParser.json());
@@ -49,7 +49,7 @@ connection.end();
  */
 
 app.get("/api/products", function (req, res) {
-  db.collection(CONTACTS_COLLECTION)
+  db.collection(PRODUCTS_COLLECTION)
     .find({})
     .toArray(function (err, docs) {
       if (err) {
@@ -61,18 +61,18 @@ app.get("/api/products", function (req, res) {
 });
 
 app.post("/api/products", function (req, res) {
-  var newContact = req.body;
-  newContact.createDate = new Date();
+  var newProduct = req.body;
+  //newProduct.createDate = new Date();
 
   if (!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
   } else {
-    db.collection(CONTACTS_COLLECTION).insertOne(newContact, function (
+    db.collection(PRODUCTS_COLLECTION).insertOne(newProduct, function (
       err,
       doc
     ) {
       if (err) {
-        handleError(res, err.message, "Failed to create new contact.");
+        handleError(res, err.message, "Failed to create new product.");
       } else {
         res.status(201).json(doc.ops[0]);
       }
