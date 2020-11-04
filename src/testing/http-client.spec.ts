@@ -8,7 +8,9 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { fail } from 'assert';
 
-import 'jasmine';
+import app from './server.js';
+
+//import 'jasmine';
 
 export interface Product {
   title: string;
@@ -127,7 +129,7 @@ it('stackoverflow bodyparser verify', () => {
   
   // const server = require('server.js');
 
-  let  bodyParser = require('body-parser');
+  //let  bodyParser = require('body-parser');
   
 
 fail(true);
@@ -159,6 +161,11 @@ it('interceptor', () => {
 
 it('localhost wamp mysql server version', () => {
   const sql = 'select version()';
+
+  // const server = require('server');
+// app.get('/', routes.index);
+// app.get('/products', product.list);
+
 
   fail(true);
  });

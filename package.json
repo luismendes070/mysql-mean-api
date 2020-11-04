@@ -5,7 +5,12 @@
     "build": "webpack --config prod.config.js",
     "start": "ng serve",
     "ng": "ng",
-    "test": "mocha",
+    "test": [
+      "jest",
+      "mocha",
+      "jasmine",
+      "karma"
+    ],
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prettier": "ng prettier",
@@ -35,12 +40,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "moment": "^2.29.1",
-    "mysql": "^2.18.1",
+    "mysql": "^2.17.1",
     "pug": "^3.0.0",
     "restify": "^8.5.1",
     "rxjs": "~6.6.0",
     "swagger-ui": "^3.36.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.1",
+    "wait-port": "^0.2.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

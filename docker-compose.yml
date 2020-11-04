@@ -8,3 +8,6 @@ services:
     ports:
       - '8000:8000'
       - '5858:5858'
+      - name: Build and push Docker images
+      uses: docker/build-push-action@v2.1.0
+

@@ -25,10 +25,11 @@ import { httpInterceptorProviders } from "./http-interceptors";
 
 import { FileValueAccessor } from './file-value-accessor';
 import { FormlyFieldFile } from './file-type.component';
+import { MessagesComponent } from './messages/messages.component';
 // import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MessagesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -2,14 +2,26 @@
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
 
-import {HttpHeaders} from '@angular/common/http';
+import {HttpClientModule, HttpHeaders, HttpParams} from '@angular/common/http';
 import {url} from "inspector";
 import { Product } from '../product';
+import { Injectable } from '@angular/core';
+
+// import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+// import { HttpHeaders } from '@angular/common/http';
+
+// import { Observable } from 'rxjs';
+// import { catchError } from 'rxjs/operators';
+
+// import { Hero } from './hero';
+ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: '17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4'
+    Authorization: '17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4',
+    Product: [],
   })
 };
 
@@ -23,6 +35,19 @@ const httpOptions2 = {
 };
 
 httpOptions2.headers = httpOptions.headers.set('Authorization', '248RYIWHK18UQIJAS92HITEON1QOWEIAWK82Y3HERUAHFNJ');
+
+@Injectable()
+export class ProductsService{
+
+
+  productsUrl = 'api/products';  // URL to web api
+  private handleError: HandleError;
+
+  constructor(
+    private http: HttpClient,
+    httpErrorHandler: HttpErrorHandler) {
+    this.handleError = httpErrorHandler.createHandleError('ProductsService');
+  }
 
 deleteProduct(id:number):Observable < {} > {
   const url = `${this.productsUrl}/${id}`; // DELETE api/products/42
@@ -54,5 +79,7 @@ searchProducts(term: string): Observable<Product[]> {
       catchError(this.handleError<Product[]>('searchProducts', []))
     );
 }
+
+}// fim  ProductsService
 
 
