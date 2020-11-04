@@ -28,15 +28,16 @@ import { MessageService } from '../message.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  //providers: [ProductsService],
+  providers: [ProductService],
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  selectedHero: Product;
+
+  selectedProduct: Product;
 
   products: Product[];
 
-  editProduct: Product; // the hero currently being edited
+  editProduct: Product; // the product currently being edited
 
   constructor(
     private productsService: ProductService,
