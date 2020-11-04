@@ -11,10 +11,10 @@ RUN NPM run build
 EXPOSE 3000
 
 # docs
-# FROM nginx
-# RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-# COPY content /usr/share/nginx/html
-# COPY conf /etc/nginx
+FROM nginx
+RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY content /usr/share/nginx/html
+COPY conf /etc/nginx
 
 #Grab the latest alpine image
 FROM alpine:latest

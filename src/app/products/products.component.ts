@@ -1,11 +1,11 @@
 import * as http from "http";
 
-import { Product } from './product';
+// import { Product } from './product';
 
 import { Component, OnInit } from '@angular/core';
 
 // import { Hero } from './hero';
-// import { ProductsService } from './products.service';
+ import { ProductsService } from './products.service';
 
 // this.productService.deleteProduct(product.id).subscribe();
 
@@ -32,13 +32,24 @@ import { MessageService } from '../message.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  selectedHero: Product;
+
   products: Product[];
+
   editProduct: Product; // the hero currently being edited
 
-  constructor(private productsService: ProductsService, private messageService: MessageService) {}
+  constructor(
+    private productsService: ProductService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit() {
     this.getProducts();
+  }
+
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+    this.messageService.add(`ProductsComponent: Selected product_id=${product.product_id}`);
   }
 
   getProducts(): void {
@@ -63,7 +74,7 @@ export class ProductsComponent implements OnInit {
 
   delete(product: Product): void {
     this.products = this.products.filter((p) => p !== product);
-    this.productsService.deleteHero(product.product_id).subscribe();
+    this.productsService.deleteProduct(product.product_id).subscribe();
     /*
     // oops ... subscribe() is missing so nothing happens
     this.heroesService.deleteHero(hero.id);
@@ -85,13 +96,19 @@ export class ProductsComponent implements OnInit {
 
   update() {
     if (this.editProduct) {
-      this.productsService.updateProduct(this.editProduct).subscribe((product) => {
-        // replace the hero in the heroes list with update from server
-        const ix = product ? this.products.findIndex((p) => p.product_id === product.product_id) : -1;
-        if (ix > -1) {
-          this.products[ix] = product;
-        }
-      });
+      this.productsService
+        .updateProduct(this.editProduct)
+        .subscribe((product) => {
+          // replace the hero in the heroes list with update from server
+          const ix = product
+            ? this.products.findIndex(
+                (p) => p.product_id === product.product_id
+              )
+            : -1;
+          if (ix > -1) {
+            this.products[ix] = product;
+          }
+        });
       this.editProduct = undefined;
     }
   }
