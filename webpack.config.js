@@ -100,6 +100,15 @@ module.exports = {
     ],
     /* Advanced module configuration (click to show) */
   },
+  module: {
+    rules: [
+      {
+        test: /\.ext$/,
+        use: ['cache-loader', ...loaders],
+        include: path.resolve('src'),
+      },
+    ],
+  },
   resolve: {
     // options for resolving module requests
     // (does not apply to resolving of loaders)
@@ -251,6 +260,9 @@ module.exports = {
   ],
   // list of additional plugins
   optimization: {
+
+    runtimeChunk: true
+
     chunkIds: "size",
     // method of generating ids for chunks
     moduleIds: "size",

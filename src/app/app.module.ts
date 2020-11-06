@@ -44,7 +44,7 @@ import { MessagesComponent } from './messages/messages.component';
     ProductDetailComponent,
     FileValueAccessor,
     FormlyFieldFile,
-    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,10 @@ import { MessagesComponent } from './messages/messages.component';
   ],
 
   providers: [httpInterceptorProviders],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent,
+    MessagesComponent,
+    ProductsComponent,
+    ProductDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
