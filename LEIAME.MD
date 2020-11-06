@@ -7,7 +7,7 @@ https://github.com/luismendes070/mysql-mean-api
 http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_challenge
 
 
-
+com.example.ngproductsapi
 
 npm start
 
@@ -24,7 +24,7 @@ heroku ps:scale web=3
 Mocha GNU Make ou Cygwin
 
 
-heroku addons:create jawsdb:kitefin 
+heroku addons:create jawsdb:kitefin
 
 falhando
 
@@ -36,7 +36,7 @@ falhando
 
 
 
-REPO2 
+REPO2
 https://ng-api-produtos.herokuapp.com/api/products?REPO2=248RYIWHK18UQIJAS92HITEON1QOWEIAWK82Y3HERUAHFNJ
 
 heroku logs --tail
