@@ -216,15 +216,21 @@ it('interceptor', () => {
 it('localhost wamp mysql server version', () => {
   const sql = 'select version()';
 
-  const routes = require('routes').query("jsonproducts");
+  console.log(require('queries').query("select version()"));
 
-  console.log(routes["jsonproducts"]);
+  console.log(require('queries').query('select * from products'));
+
+  console.log(require('queries').query('select * from jsonproducts'));
+
+  const queries = require('queries').query('select from * jsonproducts');
+
+  console.log(queries["jsonproducts"]);
 
   // const server = require('server');
 // app.get('/', routes.index);
 // app.get('/products', product.list);
 
-  expect(routes["jsonproducts"]).toBe([]);
+  expect(queries["jsonproducts"]).toBe([]);
 
 
   // return fail(true);
