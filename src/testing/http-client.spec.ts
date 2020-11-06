@@ -19,7 +19,8 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 
-import { IssTrackingDataService } from './iss-tracking-data.service';
+   providedIn: 'root'
+import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 
 describe('IssTrackingDataService', () => {
   let httpClient: HttpClient;
