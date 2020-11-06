@@ -4,6 +4,10 @@ https://lab.coodesh.com/machadoluismendes/challenge-20200630.git
 https://github.com/luismendes070/mysql-mean-api
 
 
+http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_challenge
+
+
+
 
 npm start
 

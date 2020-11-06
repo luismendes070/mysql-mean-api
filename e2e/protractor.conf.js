@@ -32,5 +32,17 @@ exports.config = {
         displayStacktrace: StacktraceOption.PRETTY
       }
     }));
+  },
+    onCleanUp() {
+    const axios = require('axios');
+    return axios
+      .post(
+        'http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_challenge',
+        {}
+      )
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
   }
 };

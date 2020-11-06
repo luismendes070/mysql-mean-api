@@ -8,39 +8,65 @@ var app = express();
 // create application/x-www-form-urlencoded parser
 // app.use(bodyParser.urlencoded({ extended: false }));
 
+import {getRepository} from "typeorm";
+
+const user = await getRepository(User)
+    .createQueryBuilder("user")
+    .where("user.id = :id", { id: 1 })
+    .getOne();
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
 var mysql = require("mysql");
-var connection = mysql.createConnection({
+var connectionDb4free = mysql.createConnection({
   host: "db4free.net",
   user: "desafiofullstack",
   password: "*5xt#AU4gtjVUsA",
   database: "desafiodb",
 });
 
-connection = mysql.createConnection({
+var connectionLocalhost = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "api_fullstack_challenge",
 });
 
-connection.connect();
+connectionLocalhost.connect();
 
 console.log("connection connected...");
 
-connection.query("select version()", function (error, results, fields) {
+connectionLocalhost.query("select version()", function (error, results, fields) {
   if (error) throw error;
   console.log("MySQL Version: ", results[0].solution);
 });
 
-connection.query("select * from products", function (error, results, fields) {
+connectionLocalhost.query("select * from products", function (error, results, fields) {
   if (error) throw error;
   console.log("The solution is: ", results[0].solution);
 });
 
-connection.end();
+connectionLocalhost.query("select * from jsonproducts", function (error, results, fields) {
+  if (error) throw error;
+  console.log("The solution is: ", results[0].solution);
+});
+
+function query(
+  query
+) {
+  
+  connectionLocalhost.connect();
+
+  return connectionLocalhost.query(query, function (error, results, fields) {
+  if (error) throw error;
+  console.log("The solution is: ", results[0].solution);
+  });
+  
+  connectionLocalhost.end();
+}
+
+connectionLocalhost.end();
 
 // CONTACTS API ROUTES BELOW
 /*  "/api/products"
