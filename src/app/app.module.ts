@@ -47,7 +47,7 @@ import { MessagesComponent } from './messages/messages.component';
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     BrowserAnimationsModule,
     CommonModule,

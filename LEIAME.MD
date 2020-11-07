@@ -7,6 +7,8 @@ https://github.com/luismendes070/mysql-mean-api
 http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_challenge
 
 
+npm run dev:ssr
+
 com.example.ngproductsapi
 
 docker build -t products .
