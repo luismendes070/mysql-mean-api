@@ -5,7 +5,7 @@ import * as http from "http";
 import { Component, OnInit } from '@angular/core';
 
 // import { Hero } from './hero';
- import { ProductsService } from './products.service';
+ // import { ProductService } from './product.service';
 
 // this.productService.deleteProduct(product.id).subscribe();
 
@@ -32,12 +32,12 @@ import { MessageService } from '../message.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-
   selectedProduct: Product;
 
   products: Product[];
 
   editProduct: Product; // the product currently being edited
+  productService: any;
 
   constructor(
     private productsService: ProductService,
@@ -50,7 +50,13 @@ export class ProductsComponent implements OnInit {
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
-    this.messageService.add(`ProductsComponent: Selected product_id=${product.product_id}`);
+    this.messageService.add(
+      `ProductsComponent: Selected product_id=${product.product_id}`
+    );
+  }
+
+  getHeroes(): void {
+    this.products = this.productService.getProducts();
   }
 
   getProducts(): void {
@@ -70,7 +76,7 @@ export class ProductsComponent implements OnInit {
     const newProduct: Product = { title } as Product;
     this.productsService
       .addProduct(newProduct)
-      .subscribe((product) => this.products.push(product));
+      .subscribe((products) => this.products.push(products));
   }
 
   delete(product: Product): void {

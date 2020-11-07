@@ -13,10 +13,8 @@ import { PRODUCTS } from './mock-products';
 //@Injectable({
 //  providedIn: 'root',
 //})
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class ProductService {
-  subscribe() {}
-
   addProduct(newProduct: Product) {
     throw new Error('Method not implemented.');
   }
@@ -34,9 +32,7 @@ export class ProductService {
 
   private productsUrl = 'app/products'; // URL to web api
 
-  constructor(private http: HttpClient) {
-    // super();
-  }
+  constructor(private http: HttpClient) {}
 
   getHeroes() {
     return this.http.get<Product[]>(this.productsUrl).pipe(
@@ -47,9 +43,7 @@ export class ProductService {
 
   getProduct(product_id: number): Observable<Product> {
     return this.getHeroes().pipe(
-      map((products) =>
-        products.find((product) => product.product_id === product_id)
-      )
+      map((products) => products.find((product) => product.product_id === product_id))
     );
   }
 
@@ -87,9 +81,7 @@ export class ProductService {
 
     const url = `${this.productsUrl}/${product.product_id}`;
 
-    return this.http
-      .put<Product>(url, product)
-      .pipe(catchError(this.handleError));
+    return this.http.put<Product>(url, product).pipe(catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {

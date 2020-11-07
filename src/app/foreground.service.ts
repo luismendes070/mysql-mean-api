@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { ForegroundService } from '@ionic-native/foreground-service/ngx';
 
 
+export class Foreground{
+
 constructor(public foregroundService: ForegroundService) { }
 
 startService() {
@@ -14,6 +16,8 @@ stopService() {
  // Disable the foreground service
  this.foregroundService.stop();
 }
+
+}//fim Foreground 
 
 
 @Injectable({
