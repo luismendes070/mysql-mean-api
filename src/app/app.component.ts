@@ -15,7 +15,7 @@ import { Product } from './product';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements Product{
+export class AppComponent extends Component implements Product{
   title: string;
   type: string;
   description: string;
@@ -34,8 +34,8 @@ export class AppComponent implements Product{
   }
 
   model: {
-    product: Product
-    products: any[]:Product
+    product: Product,
+    products: Product[]
   }; //fetch here
 
   options: FormlyFormOptions = {};
