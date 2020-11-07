@@ -5,13 +5,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
+// import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-import { Firebase } from '@ionic-native/firebase/ngx';
+//import { Firebase } from '@ionic-native/firebase/ngx';
 
-constructor(private firebase: Firebase) { }
+/* export class Main{
 
+// firebase: Firebase;
 
+  constructor(private firebase: Firebase) {
 
 this.firebase.getToken()
   .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
@@ -23,9 +25,12 @@ this.firebase.onNotificationOpen()
 this.firebase.onTokenRefresh()
   .subscribe((token: string) => console.log(`Got a new token ${token}`));
 
+  }// end constructor  
+}// fim Main */
+  
 
 // Call the element loader after the platform has been bootstrapped
-defineCustomElements(window);
+// defineCustomElements(window);
 
 if (environment.production) {
   enableProdMode();
