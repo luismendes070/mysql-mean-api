@@ -1,4 +1,7 @@
 import { Injectable, Directive } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
+
 // import { Directive } from '@angular/core';
 
 @Injectable({
@@ -8,6 +11,9 @@ import { Injectable, Directive } from '@angular/core';
    // providedIn: 'root'
 })
 export class IssTrackingDataService {
+  /* location() {
+    throw new Error('Method not implemented.');
+  } */
 
-  constructor() { }
+  constructor(httpClient: HttpClient) { }
 }

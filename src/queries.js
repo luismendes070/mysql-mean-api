@@ -1,8 +1,8 @@
 import {getRepository} from "typeorm";
 
-const user = await getRepository(User)
-    .createQueryBuilder("user")
-    .where("user.id = :id", { id: 1 })
+const user = await getRepository(JSonProducts)
+    .createQueryBuilder("product")
+    .where("product.product_id = :product_id", { product_id: 1 })
     .getOne();
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.

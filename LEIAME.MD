@@ -9,6 +9,8 @@ http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_challenge
 
 com.example.ngproductsapi
 
+docker build -t products .
+
 npm start
 
 docker-compose up -d

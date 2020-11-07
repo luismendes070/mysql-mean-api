@@ -1,5 +1,12 @@
     import {HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
     import {catchError, last, map, tap} from "rxjs/internal/operators";
+import { fileURLToPath } from 'url';
+
+
+// const file: File;
+    
+// file = require('./products.json';
+
     const req = new HttpRequest('POST', '/upload/file', file, {
       reportProgress: true,
     });
