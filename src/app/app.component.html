@@ -1,7 +1,19 @@
+<div *ngIf="model.product" class="title">{{model.product.title}}</div>
 
-Angular Fail
+<div *ngIf="model.product" class="title">{{model.product.title}}</div>
 
-<div class="toolbar" role="banner">
+<ul>
+  <li *ngFor="let product of model.products">{{product.title}}</li>
+</ul>
+
+<div [ngSwitch]="model.product?.product_id">
+  <app-happy-hero    *ngSwitchCase="'happy'"    [product]="model.product"></app-happy-hero>
+  <app-sad-hero      *ngSwitchCase="'sad'"      [product]="model.product"></app-sad-hero>
+  <app-confused-hero *ngSwitchCase="'confused'" [product]="model.product"></app-confused-hero>
+  <app-unknown-hero  *ngSwitchDefault           [product]="model.product"></app-unknown-hero>
+</div>
+
+<div class="logo">
   <span>LOGO</span>
   <div class="spacer"></div>
 </div>
@@ -10,7 +22,7 @@ Angular Fail
   <hr class=".debaixoLogo" />
 </div>
 
-<div class=".caixaCumprida">Home {{ model.title }}</div>
+<div class=".caixaCumprida">Home</div>
 
 <div class=".caixaCurta">
   <p class=".degrauMenor">
@@ -43,15 +55,15 @@ Angular Fail
 
 <span>
   <app-products>
-    {{ model.title }}
+    {{ model.products[0].title }}
 
-    {{ model.type }}
+    {{ model.products[0].type }}
 
-    {{ model.description }}
+    {{ model.products[0].description }}
 
-    {{ model.price }}
+    {{ model.product[0].price }}
 
-    {{ model.rating }}
+    {{ model.products[0].rating }}
   </app-products>
 </span>
 

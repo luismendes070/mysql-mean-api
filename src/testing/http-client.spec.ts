@@ -215,7 +215,7 @@ it('interceptor', () => {
  });
 
 it('localhost wamp mysql server version', () => {
-  const sql = 'select version()';
+  // const sql = 'select version()';
 
   console.log(require('queries').query("select version()"));
 

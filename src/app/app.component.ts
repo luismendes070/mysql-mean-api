@@ -8,12 +8,24 @@ import {
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
+import { Product } from './product';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements Product{
+  title: string;
+  type: string;
+  description: string;
+  filename: string;
+  height: number;
+  width: number;
+  price: number;
+  rating: number;
+  product_id: number;
+
   form = new FormGroup({});
 
   onSubmit({ valid, value }) {
@@ -22,17 +34,8 @@ export class AppComponent {
   }
 
   model: {
-    title: 'products';
-    type: '';
-    description: '';
-    filename: '';
-    height: 0.0;
-    width: 0.0;
-    price: 0.0;
-    rating: 0;
-    created: '';
-    action: '["Edit", "Delete"]';
-    productId: '';
+    product: Product
+    products: any[]:Product
   }; //fetch here
 
   options: FormlyFormOptions = {};

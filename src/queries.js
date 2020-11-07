@@ -23,26 +23,15 @@ var connectionLocalhost = mysql.createConnection({
   database: "api_fullstack_challenge",
 });
 
-connectionLocalhost.connect();
+await connectionLocalhost.connect();
 
 console.log("connection connected...");
 
-connectionLocalhost.query("select version()", function (error, results, fields) {
-  if (error) throw error;
-  console.log("MySQL Version: ", results[0].solution);
-});
 
-connectionLocalhost.query("select * from products", function (error, results, fields) {
-  if (error) throw error;
-  console.log("The solution is: ", results[0].solution);
-});
 
-connectionLocalhost.query("select * from jsonproducts", function (error, results, fields) {
-  if (error) throw error;
-  console.log("The solution is: ", results[0].solution);
-});
+//async await fetch then then
 
-export function query(
+export async function query(
   query
 ) {
   
@@ -53,9 +42,9 @@ export function query(
   console.log("The solution is: ", results[0].solution);
   });
   
-  connectionLocalhost.end();
+  // connectionLocalhost.end();
 }
 
-connectionLocalhost.end();
+// connectionLocalhost.end();
 
 
