@@ -1,4 +1,4 @@
-import * as http from "http";
+// import * as http from "http";
 
 // import { Product } from './product';
 
@@ -74,14 +74,12 @@ export class ProductsComponent implements OnInit {
 
     // The server will generate the id for this new hero
     const newProduct: Product = { title } as Product;
-    this.productsService
-      .addProduct(newProduct)
-      .subscribe((products) => this.products.push(products));
+    // this.productsService.addProduct(newProduct).subscribe((products) => this.products.push(products));
   }
 
   delete(product: Product): void {
     this.products = this.products.filter((p) => p !== product);
-    this.productsService.deleteProduct(product.product_id).subscribe();
+    // this.productsService.deleteProduct(product.product_id).subscribe();
     /*
     // oops ... subscribe() is missing so nothing happens
     this.heroesService.deleteHero(hero.id);
@@ -95,17 +93,15 @@ export class ProductsComponent implements OnInit {
   search(searchTerm: string) {
     this.editProduct = undefined;
     if (searchTerm) {
-      this.productsService
-        .searchProducts(searchTerm)
-        .subscribe((products) => (this.products = products));
+      // this.productsService.searchProducts(searchTerm).subscribe((products) => (this.products = products));
     }
   }
 
   update() {
     if (this.editProduct) {
-      this.productsService
-        .updateProduct(this.editProduct)
-        .subscribe((product) => {
+
+
+      /* this.productsService.updateProduct(this.editProduct).subscribe((product) => {
           // replace the hero in the heroes list with update from server
           const ix = product
             ? this.products.findIndex(
@@ -115,7 +111,8 @@ export class ProductsComponent implements OnInit {
           if (ix > -1) {
             this.products[ix] = product;
           }
-        });
+      }); */
+      
       this.editProduct = undefined;
     }
   }

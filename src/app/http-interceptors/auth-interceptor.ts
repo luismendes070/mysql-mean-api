@@ -1,7 +1,7 @@
 import { AuthService } from '../auth.service';
 import {Injectable} from "@angular/core";
 import {HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {HttpHandler} from "./noop-interceptor";
+import { HttpHandler } from "./HttpHandler";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

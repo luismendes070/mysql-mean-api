@@ -15,7 +15,9 @@ import { PRODUCTS } from './mock-products';
 //})
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  subscribe() {}
+  public subscribe(...args: [products: Product[]]): void {
+    return;
+  }
 
   addProduct(newProduct: Product) {
     throw new Error('Method not implemented.');

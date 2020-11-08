@@ -23,7 +23,7 @@ import { httpInterceptorProviders } from "./http-interceptors";
 // import { FormlyModule } from '@ngx-formly/core';
 // import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
-import { FileValueAccessor } from './file-value-accessor';
+// import { FileValueAccessor } from './file-value-accessor';
 import { FormlyFieldFile } from './file-type.component';
 // import { MessagesComponent } from './messages/messages.component';
 // import { AppComponent } from './app.component';
@@ -35,6 +35,8 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ProductService } from './products/product.service';
+// import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,7 @@ import { MessagesComponent } from './messages/messages.component';
     MessagesComponent,
     ProductsComponent,
     ProductDetailComponent,
-    FileValueAccessor,
+    // FileValueAccessor,
     FormlyFieldFile,
     
   ],
@@ -75,7 +77,7 @@ import { MessagesComponent } from './messages/messages.component';
     }),
   ],
 
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, ProductService],
   bootstrap: [AppComponent,
     MessagesComponent,
     ProductsComponent,

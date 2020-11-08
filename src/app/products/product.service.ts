@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 
 import { Product } from './product';
 
-import { PRODUCTS } from './mock-products';
+ // import { PRODUCTS } from './mock-products';
 //import { MessageService } from './message.service';
 
 //@Injectable({

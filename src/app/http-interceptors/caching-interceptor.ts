@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {HttpHandler} from "./noop-interceptor";
+import { HttpHandler } from "./HttpHandler";
 import {of} from "rxjs";
 
 @Injectable()
