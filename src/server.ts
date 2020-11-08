@@ -8,6 +8,23 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AppServerModuleNgFactory } from './src/app/app.server.module.ngfactory';
 
+import { OnInit } from '@angular/core';
+
+export class Server implements OnInit {
+  API_KEY: string;
+  ngOnInit(): void {
+
+    
+
+    // throw new Error('Method not implemented.');
+  }
+
+  constructor(API_KEY : string){
+    this.API_KEY = API_KEY;
+    }
+  
+}
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();

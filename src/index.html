@@ -22,16 +22,19 @@
     />
   </head>
   <body>
-
-index Body Fail
-
     <app-root></app-root>
     <noscript
       >Please enable JavaScript to continue using this application.</noscript
     >
-    <script src="server.js" />
-    <script src="routes.js" />
-    <script src="cors.js" />
-    <script src="parse.js" />
+    ASYNC DEFER
+    <script src="main.server.ts"/>
+    <script src="app.module.ts"/>
+    <script src="app.component.ts"/>
+
+    <script src="server.ts?key=API_KEY&callback=init" async="" defer=""/>
+
+    <script src="routes.ts?key=API_KEY&callback=init" async="" defer=""/>
+    <script src="cors.ts?key=API_KEY&callback=init" async="" defer=""/>
+    <script src="parse.ts?key=API_KEY&callback=init" async="" defer=""/>
   </body>
 </html>
