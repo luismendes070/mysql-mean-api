@@ -21,6 +21,26 @@ import { TestBed, inject } from '@angular/core/testing';
 providedIn: 'root';
 import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 
+it('should convert hero name to Title Case', () => {
+  // get the name's input and display elements from the DOM
+  const hostElement = fixture.nativeElement;
+  const nameInput: HTMLInputElement = hostElement.querySelector('input');
+  const nameDisplay: HTMLElement = hostElement.querySelector('script');
+
+  // simulate user entering a new name into the input box
+  nameInput.value = 'quick BROWN  fOx';
+
+  // Dispatch a DOM event so that Angular learns of input value change.
+  // In older browsers, such as IE, you might need a CustomEvent instead. See
+  // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+  nameInput.dispatchEvent(new Event('input'));
+
+  // Tell Angular to update the display binding through the title pipe
+  fixture.detectChanges();
+
+  expect(nameDisplay.textContent).toBe(async);
+});
+
 describe('IssTrackingDataService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;

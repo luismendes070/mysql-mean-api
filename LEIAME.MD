@@ -13,6 +13,7 @@ com.example.ngproductsapi
 
 docker build -t products .
 
+ionic start
 npm start
 
 docker-compose up -d
