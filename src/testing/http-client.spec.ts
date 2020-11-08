@@ -223,3 +223,14 @@ it('localhost wamp mysql server version', () => {
 
   // return fail(true);
 });
+
+it('should ngcc ivy exists', () => {
+
+  // assert
+  const ngcc = require('@angular/compiler');
+  // a
+  // a
+  expect(ngcc).toBe(ngcc);
+
+  return fail(true);
+});
