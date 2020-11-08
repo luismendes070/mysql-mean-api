@@ -21,6 +21,7 @@ export class Server implements OnInit {
 
   constructor(API_KEY : string){
     this.API_KEY = API_KEY;
+    this.API_KEY = require('.env')["API_KEY"];
     }
   
 }

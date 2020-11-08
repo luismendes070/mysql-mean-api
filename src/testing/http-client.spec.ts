@@ -224,6 +224,18 @@ it('localhost wamp mysql server version', () => {
   // return fail(true);
 });
 
+it('should calback async load exists', () => {
+
+  // assert
+  const index = require('index.html');
+  // a
+  // a
+  expect(index).toBe(index);
+
+  return fail(true);
+  
+});
+
 it('should ngcc ivy exists', () => {
 
   // assert
