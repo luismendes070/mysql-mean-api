@@ -5,7 +5,7 @@ import { Observable, of, throwError as observableThrowError } from 'rxjs';
 
 import { catchError, map } from 'rxjs/operators';
 
-import { Product } from './product';
+import { Product as IProduct } from './product';
 
   import { PRODUCTS } from './mock-products';
 //import { MessageService } from './message.service';
@@ -15,7 +15,7 @@ import { Product } from './product';
 //})
 @Injectable()
 export class ProductService {
-  addProduct(newProduct: Product) {
+  addProduct(newProduct: IProduct) {
     throw new Error('Method not implemented.');
   }
   deleteProduct(product_id: number) {
@@ -24,7 +24,7 @@ export class ProductService {
   searchProducts(searchTerm: string) {
     throw new Error('Method not implemented.');
   }
-  updateProduct(editProduct: Product) {
+  updateProduct(editProduct: IProduct) {
     throw new Error('Method not implemented.');
   }
   //constructor() { }
@@ -32,11 +32,31 @@ export class ProductService {
 
   private productsUrl = 'api/products'; // URL to web api
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    
+  }
 
-  getProducts(...args: []): Observable<Product[]> {
+  // getProducts(...args: []): Observable<Product[]> {
     // TODO: send the message _after_ fetching the heroes
     //this.messageService.add('ProductService: fetched product');
-    return of(PRODUCTS);
+    // return of(PRODUCTS);
+  // }
+
+getProducts():Observable<IProduct[]> {
+    // TODO: send the message _after_ fetching the heroes
+    //this.messageService.add('ProductService: fetched product');
+    // return of(PRODUCTS);
+  return this.http.get<IProduct[]>(this.productsUrl).pipe(
+    catchError(this.handleError<IProduct[]>('getEvents', []))
+  )
   }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    }
+  }
+
+
 }

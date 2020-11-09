@@ -1,4 +1,4 @@
-import { Firebase } from '@ionic-native/firebase/ngx';
+/* import { Firebase } from '@ionic-native/firebase/ngx';
 
 constructor(private firebase: Firebase) { }
 
@@ -9,7 +9,9 @@ this.firebase.getToken()
   .catch(error => console.error('Error getting token', error));
 
 this.firebase.onNotificationOpen()
-   .subscribe(data => console.log(`User opened a notification ${data}`));
+   .subscribe(
+     data => console.log(`User opened a notification ${data}`)
+   );
 
 this.firebase.onTokenRefresh()
-  .subscribe((token: string) => console.log(`Got a new token ${token}`));
+  .subscribe((token: string) => console.log(`Got a new token ${token}`)); */

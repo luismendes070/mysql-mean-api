@@ -33,6 +33,7 @@ this.firebase.onTokenRefresh()
 // defineCustomElements(window);
 
 if (environment.production) {
+	console.log("production environment enabled...");
   enableProdMode();
 }
 

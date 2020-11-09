@@ -1,11 +1,6 @@
-// import * as http from "http";
-
-// import { Product } from './product';
+ import * as http from "http";
 
 import { Component, OnInit } from '@angular/core';
-
-// import { Hero } from './hero';
- // import { ProductService } from './product.service';
 
 // this.productService.deleteProduct(product.id).subscribe();
 
@@ -16,8 +11,6 @@ import { Component, OnInit } from '@angular/core';
 // 1 request made.
 // req.subscribe();
 // 2 requests made.
-
-// import { ProductService } from 'products.service.ts';
 
 // import { Component, OnInit } from '@angular/core';
 

@@ -17,6 +17,7 @@
     "@angular/router": "~10.1.1",
     "@angular/service-worker": "~10.1.1",
     "@capacitor/core": "2.4.2",
+    "@ionic/pwa-elements": "^3.0.1",
     "@ngtools/webpack": "^10.2.0",
     "@nguniversal/express-engine": "^10.1.0",
     "@ngx-formly/core": "^5.10.5",
@@ -79,6 +80,7 @@
     "offline-plugin": "^4.5.5",
     "parallel-webpack": "^2.6.0",
     "protractor": "~7.0.0",
+    "ts-loader": "^8.0.11",
     "ts-node": "^8.3.0",
     "tslint": "~6.1.0",
     "typescript": "^4.0.5",
@@ -90,6 +92,7 @@
     "webpack": "^1.12.11 || ~2 || ~3 || ~4"
   },
   "scripts": {
+    "server":"node node_modules/ngf-server/server.js --proxy.conf.json",
     "postinstall": "ngcc",
     "build": "webpack --config prod.config.js",
     "start": "ng serve",
