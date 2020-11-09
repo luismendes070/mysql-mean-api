@@ -10,8 +10,8 @@ Postman  https://documenter.getpostman.com/view/2826738/TVYQ2uT5#1d38d962-1757-4
 
 npm run dev:ssr
 
-com.example.ngproductsapi
-
+com.example.ngproductsapi 
+io.ionic.starter
 docker build -t products .
 
 ionic start

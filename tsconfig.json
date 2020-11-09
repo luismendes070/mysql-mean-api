@@ -7,15 +7,11 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "lib": [
       "es2018",
       "dom"
@@ -23,4 +19,3 @@
     "types":["node","mocha","jasmine","typescript","body-parser"]
   }
 }
-
