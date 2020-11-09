@@ -21,6 +21,20 @@ import { TestBed, inject } from '@angular/core/testing';
 providedIn: 'root';
 import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 
+import {HarnessLoader} from '@angular/cdk/testing';
+import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
+
+let loader: HarnessLoader;
+
+describe('app-component', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({imports: [AppModule], declarations: [AppComponent]})
+        .compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    loader = TestbedHarnessEnvironment.loader(fixture);
+  });
+}
+
 it('should convert hero name to Title Case', () => {
   // get the name's input and display elements from the DOM
   const hostElement = fixture.nativeElement;
