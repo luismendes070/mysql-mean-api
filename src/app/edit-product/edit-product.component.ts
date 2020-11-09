@@ -1,22 +1,22 @@
 import {
-	Component,
-	OnInit,
-	NgModule,
-	CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  OnInit,
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
-import { Product } from './product';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  preserveWhitespaces: true
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.css'],
+  preserveWhitespaces: true,
 })
-export class AppComponent extends Component implements Product{
+export class EditProductComponent extends Component implements Product {
   title: string;
   type: string;
   description: string;
@@ -35,8 +35,8 @@ export class AppComponent extends Component implements Product{
   }
 
   model: {
-    product: Product,
-    products: Product[]
+    product: Product;
+    products: Product[];
   }; //fetch here
 
   options: FormlyFormOptions = {};
@@ -47,8 +47,8 @@ export class AppComponent extends Component implements Product{
       type: 'file',
       templateOptions: {
         type: 'text',
-        label: 'products Anexar arquivo json'
-      }
+        label: 'products Anexar arquivo json',
+      },
     },
   ];
 }
