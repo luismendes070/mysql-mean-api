@@ -92,7 +92,7 @@
     "webpack": "^1.12.11 || ~2 || ~3 || ~4"
   },
   "scripts": {
-    "server":"node node_modules/ngf-server/server.js --proxy.conf.json",
+    "server": "node node_modules/ngf-server/server.js --proxy.conf.json",
     "postinstall": "ngcc",
     "build": "webpack --config prod.config.js",
     "start": "ng serve",

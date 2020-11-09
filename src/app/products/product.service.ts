@@ -46,8 +46,20 @@ getProducts():Observable<IProduct[]> {
     // TODO: send the message _after_ fetching the heroes
     //this.messageService.add('ProductService: fetched product');
     // return of(PRODUCTS);
-  return this.http.get<IProduct[]>(this.productsUrl).pipe(
-    catchError(this.handleError<IProduct[]>('getEvents', []))
+  return this.http.get<IProduct[]>(this.productsUrl).
+    pipe(
+    catchError(this.handleError<IProduct[]>('getProducts', []))
+  )
+}
+  
+  getProduct():Observable<IProduct[]> {
+    // TODO: send the message _after_ fetching the heroes
+    //this.messageService.add('ProductService: fetched product');
+    // return of(PRODUCTS);
+    return this.http.get<IProduct[]>(
+      this.productsUrl + product_id)
+      .pipe(
+    catchError(this.handleError<IProduct[]>('getProducts', []))
   )
   }
 
