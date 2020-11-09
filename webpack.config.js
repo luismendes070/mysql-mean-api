@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   mode: "production", // "production" | "development" | "none"
   // Chosen mode tells webpack to use its built-in optimizations accordingly.
-  entry: "./app/entry", // string | object | array
+  //entry: "./app/entry", // string | object | array
+  entry: "./src/main.ts",
   // defaults to ./src
   // Here the application starts executing
   // and webpack starts bundling
@@ -106,6 +107,7 @@ module.exports = {
         test: /\.ext$/,
         use: ['cache-loader', ...loaders],
         include: path.resolve('src'),
+		exclude: /node_modules/
       },
     ],
   },
@@ -114,7 +116,7 @@ module.exports = {
     // (does not apply to resolving of loaders)
     modules: ["node_modules", path.resolve(__dirname, "app")],
     // directories where to look for modules (in order)
-    extensions: [".js", ".json", ".jsx", ".css"],
+    extensions: [".tsx", ".ts",".js", ".json", ".jsx", ".css"],
     // extensions that are used
     alias: {
       // a list of module name aliases
