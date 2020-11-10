@@ -32,90 +32,16 @@ describe('app-component', () => {
         .compileComponents();
     fixture = TestBed.createComponent(AppComponent);
     loader = TestbedHarnessEnvironment.loader(fixture);
-  });
+ 
+ });
 }
 
-it('should convert hero name to Title Case', () => {
-  // get the name's input and display elements from the DOM
-  const hostElement = fixture.nativeElement;
-  const nameInput: HTMLInputElement = hostElement.querySelector('input');
-  const nameDisplay: HTMLElement = hostElement.querySelector('script');
-
-  // simulate user entering a new name into the input box
-  nameInput.value = 'quick BROWN  fOx';
-
-  // Dispatch a DOM event so that Angular learns of input value change.
-  // In older browsers, such as IE, you might need a CustomEvent instead. See
-  // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
-  nameInput.dispatchEvent(new Event('input'));
-
-  // Tell Angular to update the display binding through the title pipe
-  fixture.detectChanges();
-
-  expect(nameDisplay.textContent).toBe(async);
-});
-
-describe('IssTrackingDataService', () => {
+/* describe('HttpClient testing', () => {
   let httpClient: HttpClient;
+  
   let httpTestingController: HttpTestingController;
-  let issTrackingDataService: IssTrackingDataService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [IssTrackingDataService],
-    });
-
-    httpClient = TestBed.inject(HttpClient);
-    httpTestingController = TestBed.inject(HttpTestingController);
-    issTrackingDataService = new IssTrackingDataService(httpClient);
-  });
-
-  it('exists', inject(
-    [IssTrackingDataService],
-    (service: IssTrackingDataService) => {
-      expect(service).toBeTruthy();
-    }
-  ));
-
-  /* describe('location', () => {
-    it('gets the location of the ISS now', () => {
-      issTrackingDataService.location().subscribe((x) => {
-        expect(x).toEqual({ longitude: -138.1719, latitude: 44.4423 });
-      });
-      const req = httpTestingController.expectOne(
-        'http://api.open-notify.org/iss-now.json'
-      );
-      expect(req.request.method).toEqual('GET');
-      req.flush({
-        iss_position: { longitude: '-138.1719', latitude: '44.4423' },
-        timestamp: 1525950644,
-        message: 'success',
-      });
-      httpTestingController.verify();
-    });
-  }); */
-});
-
-// import app from './server.js';
-
-//import 'jasmine';
-
-/* export interface Product {
-  title: string;
-  type: string;
-  description: string;
-  filename: string;
-  height: number;
-  width: number;
-  price: number;
-  rating: number;
-  product_id: number;
-} */
-
-describe('HttpClient testing', () => {
-  let httpClient: HttpClient;
-  let httpTestingController: HttpTestingController;
+  
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -126,8 +52,8 @@ describe('HttpClient testing', () => {
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
-  /// Tests begin ///
-});
+  
+}); */
 
 const testProduct: Product = {
   title: 'Asparagus',

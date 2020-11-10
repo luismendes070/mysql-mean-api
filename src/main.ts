@@ -5,6 +5,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+// import { Local } from '@angular/common';
+
 // import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 //import { Firebase } from '@ionic-native/firebase/ngx';

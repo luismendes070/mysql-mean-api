@@ -10,6 +10,8 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 import { Product } from './product';
 
+// import { Local } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

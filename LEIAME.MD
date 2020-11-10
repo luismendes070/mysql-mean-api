@@ -7,6 +7,7 @@ Wampp http://localhost/phpmyadmin/db_structure.php?server=1&db=api_fullstack_cha
 
 Postman  https://documenter.getpostman.com/view/2826738/TVYQ2uT5#1d38d962-1757-45c3-807d-a016b38892e4
 
+http://localhost:3000/api/products
 
 npm run dev:ssr
 
