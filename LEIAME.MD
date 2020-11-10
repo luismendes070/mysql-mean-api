@@ -13,6 +13,8 @@ npm run dev:ssr
 
 ng update
 
+https://ng-api-produtos.herokuapp.com/
+
 
 com.example.ngproductsapi 
 io.ionic.starter

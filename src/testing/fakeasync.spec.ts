@@ -24,25 +24,28 @@ import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 import {HarnessLoader} from '@angular/cdk/testing';
 import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
 
-test('create product', async () => {
-    expect.assertions(1);
-    const product = await db.tblProduct.create({
-        product_id: 1,
-    });
-    expect(product.product_id).toEqual(1);
+let loader: HarnessLoader;
+
+it('should run new macro task callback with delay after call tick with millis',fakeAsync(() => {
+     function nestedTimer(cb: () => any): void {
+       setTimeout(() => setTimeout(() => cb()));
+     }
+     const callback = jasmine.createSpy('callback');
+     nestedTimer(callback);
+     expect(callback).not.toHaveBeenCalled();
+     tick(0);
+     // the nested timeout will also be triggered
+     expect(callback).toHaveBeenCalled();
+   }));
+
+   it('should calback async load exists', () => {
+
+  // assert
+  const index = require('index.html');
+  // a
+  // a
+  expect(index).toBe(index);
+
+  return fail(true);
+  
 });
-
-test('delete product', async () => {
-    expect.assertions(1);
-    await db.Person.destroy({
-        where: {
-            id: 1
-        }
-    });
-    const person = await db.Person.findByPk(1);
-    expect(person).toBeNull();
-});
-
-
-
-

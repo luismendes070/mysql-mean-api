@@ -24,25 +24,14 @@ import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 import {HarnessLoader} from '@angular/cdk/testing';
 import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
 
-test('create product', async () => {
-    expect.assertions(1);
-    const product = await db.tblProduct.create({
-        product_id: 1,
-    });
-    expect(product.product_id).toEqual(1);
+it('should ngcc ivy exists', () => {
+
+  // assert
+  const ngcc = require('@angular/compiler');
+  // a
+
+  // a
+  expect(ngcc.version).toBe('10');
+
+  return fail(true);
 });
-
-test('delete product', async () => {
-    expect.assertions(1);
-    await db.Person.destroy({
-        where: {
-            id: 1
-        }
-    });
-    const person = await db.Person.findByPk(1);
-    expect(person).toBeNull();
-});
-
-
-
-

@@ -26,8 +26,40 @@ import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
 
 let loader: HarnessLoader;
 
+
+
 describe('app-component', () => {
   beforeEach(async () => {
+
+    //info using npm@6.14.8
+// info using node@v14.15.0
+it('error code ELIFECYCLE error errno 1 nvm use ', () => {
+  console.log('testing... ');
+  // return fail(true);
+});
+
+it('should typescript 4.0.5', () => {
+  console.log('testing typescript 4.0.5 ... ');
+  let t = require('typescript');
+  expect(t).toBe(t.version);
+  // return fail(true);
+});
+
+it('should npm 6.14.8', () => {
+  console.log('testing npm 6.14.8 ... ');
+  let npm = require('npm');
+  // let node = require('node');
+  expect('6.14.6').toBe(npm.version);
+  // return fail(true);
+});
+
+it('should node 14.15.0', () => {
+  console.log('testing node 14.15.0 ... ');
+  let node = require('node');
+  expect('14.15.0').toBe(node.version);
+  // return fail(true);
+});
+
     await TestBed.configureTestingModule({imports: [AppModule], declarations: [AppComponent]})
         .compileComponents();
     fixture = TestBed.createComponent(AppComponent);
@@ -55,16 +87,22 @@ describe('app-component', () => {
   
 }); */
 
-const testProduct: Product = {
-  title: 'Asparagus',
-  type: 'vegetable',
-  description: 'Asparagus with ham on the wooden table',
-  filename: '2.jpg',
-  height: 450,
-  width: 299,
-  price: 18.95,
-  rating: 3,
-  product_id: 0,
+
+
+let testProduct;
+
+testProduct = {
+  [
+    'title': 'Asparagus',
+  'type': 'vegetable',
+  'description': 'Asparagus with ham on the wooden table',
+  'filename': '2.jpg',
+  'height': 450,
+  'width': 299,
+  'price': 18.95,
+  'rating': 3,
+  'product_id': 2,
+  ]
 };
 
 it('can test HttpClient.get', () => {
@@ -75,7 +113,7 @@ it('can test HttpClient.get', () => {
   // Make an HTTP GET request
   httpClient.get<Product>(testUrl).subscribe((product) =>
     // When observable resolves, result should match test data
-    expect(product[2]).toEqual(testProduct)
+    expect(product[2].title).toEqual(testProduct['title'])
   );
 
   // The following `expectOne()` will match the request's URL.
@@ -162,6 +200,10 @@ it('webpack', () => {
   // return fail(true);
 });
 
+
+
+
+
 it('localhost wamp mysql server version', () => {
   // const sql = 'select version()';
 
@@ -184,25 +226,6 @@ it('localhost wamp mysql server version', () => {
   // return fail(true);
 });
 
-it('should calback async load exists', () => {
 
-  // assert
-  const index = require('index.html');
-  // a
-  // a
-  expect(index).toBe(index);
 
-  return fail(true);
-  
-});
 
-it('should ngcc ivy exists', () => {
-
-  // assert
-  const ngcc = require('@angular/compiler');
-  // a
-  // a
-  expect(ngcc).toBe(ngcc);
-
-  return fail(true);
-});
