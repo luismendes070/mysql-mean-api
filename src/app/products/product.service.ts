@@ -1,20 +1,27 @@
 import { HttpClient, HttpErrorResponse, HttpController, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
+// import { Injectable } from '@angular/core';
 import { Observable, of, throwError as observableThrowError } from 'rxjs';
-
 import { catchError, map } from 'rxjs/operators';
-
 import { Product as IProduct } from './product';
 
-  import { PRODUCTS } from './mock-products';
-//import { MessageService } from './message.service';
 
-//@Injectable({
-//  providedIn: 'root',
-//})
+
+import { Injectable } from '@angular/core';
+import {
+  EntityCollectionServiceBase,
+  EntityCollectionServiceElementsFactory
+} from '@ngrx/data';
+// import { Hero } from '../core';
+
+@Injectable({ providedIn: 'root' })
+export class ProductService extends EntityCollectionServiceBase<IProduct> {
+  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+    super('Product', serviceElementsFactory);
+  }
+}
+
 @Injectable()
-export class ProductcService implements HttpController, HttpErrorResponse, HttpHeaders{
+export class ProductService implements HttpController, HttpErrorResponse, HttpHeaders{
   addProduct(newProduct: IProduct) {
     throw new Error('Method not implemented.');
   }
@@ -33,7 +40,7 @@ export class ProductcService implements HttpController, HttpErrorResponse, HttpH
   private productsUrl = 'api/products'; // URL to web api
 
   constructor(private http: HttpClient) {
-    
+
   }
     has(name: string): boolean {
         throw new Error("Method not implemented.");
@@ -81,7 +88,7 @@ getProducts():Observable<IProduct[]> {
     catchError(this.handleError<IProduct[]>('getProducts', []))
   )
 }
-  
+
   getProduct(product_id):Observable<IProduct[]> {
     // TODO: send the message _after_ fetching the heroes
     //this.messageService.add('ProductService: fetched product');
