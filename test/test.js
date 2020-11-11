@@ -22,7 +22,7 @@ describe("Connection", function () {
 
   describe("#find()", function () {
     it("respond with matching records", function (done) {
-      db.find({ type: "User" }, function (err, res) {
+      db.find({ type: "JsonProducts" }, function (err, res) {
         if (err) return done(err);
         res.should.have.length(3);
         done();
@@ -31,10 +31,10 @@ describe("Connection", function () {
   });
 });
 
-describe("User", function () {
+describe("Product", function () {
   describe("#save()", function () {
     it("should save without error", function (done) {
-      var user = new User("Luna");
+      var user = new Product("Aspargos");
       user.save(function (err) {
         if (err) done(err);
         else done();

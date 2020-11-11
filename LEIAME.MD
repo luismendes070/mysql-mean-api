@@ -58,3 +58,7 @@ docker build
 docker pull
 
 docker run
+
+
+npm install @types/jasmine --save-dev
+

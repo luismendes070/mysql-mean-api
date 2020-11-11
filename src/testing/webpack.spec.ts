@@ -23,3 +23,11 @@ import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 
 import {HarnessLoader} from '@angular/cdk/testing';
 import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
+
+it('webpack', () => {
+
+  const webpack = require('webpack');
+  expect(webpack).toBe(null);
+
+  // return fail(true);
+});
