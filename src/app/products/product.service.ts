@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpController, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable, of, throwError as observableThrowError } from 'rxjs';
@@ -14,7 +14,7 @@ import { Product as IProduct } from './product';
 //  providedIn: 'root',
 //})
 @Injectable()
-export class ProductService {
+export class ProductcService implements HttpController, HttpErrorResponse, HttpHeaders{
   addProduct(newProduct: IProduct) {
     throw new Error('Method not implemented.');
   }
@@ -35,6 +35,36 @@ export class ProductService {
   constructor(private http: HttpClient) {
     
   }
+    has(name: string): boolean {
+        throw new Error("Method not implemented.");
+    }
+    get(name: string): string {
+        throw new Error("Method not implemented.");
+    }
+    keys(): string[] {
+        throw new Error("Method not implemented.");
+    }
+    getAll(name: string): string[] {
+        throw new Error("Method not implemented.");
+    }
+    append(name: string, value: string | string[]): HttpHeaders {
+        throw new Error("Method not implemented.");
+    }
+    set(name: string, value: string | string[]): HttpHeaders {
+        throw new Error("Method not implemented.");
+    }
+    delete(name: string, value?: string | string[]): HttpHeaders {
+        throw new Error("Method not implemented.");
+    }
+    name: "HttpErrorResponse";
+    message: string;
+    error: any;
+    ok: false;
+    headers: HttpHeaders;
+    status: number;
+    statusText: string;
+    url: string;
+    type: import("@angular/common/http").HttpEventType.ResponseHeader | import("@angular/common/http").HttpEventType.Response;
 
   // getProducts(...args: []): Observable<Product[]> {
     // TODO: send the message _after_ fetching the heroes
@@ -52,7 +82,7 @@ getProducts():Observable<IProduct[]> {
   )
 }
   
-  getProduct():Observable<IProduct[]> {
+  getProduct(product_id):Observable<IProduct[]> {
     // TODO: send the message _after_ fetching the heroes
     //this.messageService.add('ProductService: fetched product');
     // return of(PRODUCTS);

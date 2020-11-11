@@ -1,9 +1,5 @@
 // Http testing module and mocking controller
-import // HttpClientTestingModule,
-// HttpTestingController
-'@angular/common/http/testing';
 
-// import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { fail } from 'assert';
 import { Product } from 'src/app/product';
@@ -13,16 +9,18 @@ import {
   // HttpClient
 } from '@angular/common/http';
 import {
-  HttpTestingController,
-  HttpClientTestingModule,
+  HttpTestingController
 } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 
 providedIn: 'root';
-import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
+// import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 
 import {HarnessLoader} from '@angular/cdk/testing';
 import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
+import { AppComponent } from '../app/app.component';
+import { AppModule } from '../app/app.module';
+import { ProductService } from '../app/product.service';
 
 let loader: HarnessLoader;
 
@@ -62,13 +60,13 @@ it('should node 14.15.0', () => {
 
     await TestBed.configureTestingModule({imports: [AppModule], declarations: [AppComponent]})
         .compileComponents();
-    fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(AppComponent);
     loader = TestbedHarnessEnvironment.loader(fixture);
  
  });
 }
 
-/* describe('HttpClient testing', () => {
+describe('HttpClient ProductService testing', () => {
   let httpClient: HttpClient;
   
   let httpTestingController: HttpTestingController;
@@ -85,24 +83,22 @@ it('should node 14.15.0', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
   
-}); */
+}); 
 
+//h1.textContent
 
-
-let testProduct;
-
-testProduct = {
-  [
-    'title': 'Asparagus',
-  'type': 'vegetable',
-  'description': 'Asparagus with ham on the wooden table',
-  'filename': '2.jpg',
-  'height': 450,
-  'width': 299,
-  'price': 18.95,
-  'rating': 3,
-  'product_id': 2,
-  ]
+/* testProduct:Product = {
+  
+    title: 'Asparagus',
+  type: 'vegetable',
+  description: 'Asparagus with ham on the wooden table',
+  filename: '2.jpg',
+  height: 450,
+  width: 299,
+  price: 18.95,
+  rating: 3,
+  product_id: 2,
+  
 };
 
 it('can test HttpClient.get', () => {
@@ -130,24 +126,30 @@ it('can test HttpClient.get', () => {
 
   // Finally, assert that there are no outstanding requests.
   httpTestingController.verify();
-});
+}); */
 
-afterEach(() => {
-  let httpTestingController: HttpTestingController;
+// afterEach(() => {
+  // let httpTestingController: HttpTestingController;
   // After every test, assert that there are no more pending requests.
-  httpTestingController.verify();
-});
+  // httpTestingController.verify();
+// });
 
-it('can test for 404 error', () => {
+/**
+ * it('can test for 404 error', () => {
   // Expect one request with an authorization header
-  let httpTestingController: HttpTestingController;
+
+  let httpTestingController: ProductService;
+  let httpTestingController2: ProductService;
+  let httpTestingController3: ProductService;
+
+
   const req2 = httpTestingController.expectOne((request) =>
-    request.headers.has('Authorization')
+    request.headers.has('Authorization');
   );
 
   // get all pending requests that match the given URL
   const testUrl = '/api/products';
-  const requests = httpTestingController.match(testUrl);
+  const requests = httpTestingController2.match(testUrl);
   expect(requests.length).toEqual(3);
 
   // Respond to each request with different results
@@ -165,11 +167,14 @@ it('can test for 404 error', () => {
     }
   );
 
-  const req = httpTestingController.expectOne(testUrl);
+const req = httpTestingController3.expectOne(testUrl);
 
   // Respond with mock error
   req.flush(emsg, { status: 404, statusText: 'Not Found' });
-});
+}
+)
+);
+ * /
 
 it('stackoverflow bodyparser verify', () => {
   // const server = require('server.js');

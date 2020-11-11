@@ -15,7 +15,11 @@ import { PRODUCTS } from './mock-products';
 //})
 @Injectable({ providedIn: 'root' })
 export class ProductService {
+
+  private subscribers: Product[] = [];
+
   public subscribe(...args: [products: Product[]]): void {
+    this.subscribers.push(products);
     return;
   }
 
@@ -63,12 +67,15 @@ export class ProductService {
   }
 
   delete(product: Product) {
+
     const headers = new Headers();
+
     headers.append('Content-Type', 'application/json');
 
     const url = `${this.productsUrl}/${product.product_id}`;
 
     return this.http.delete<Product>(url).pipe(catchError(this.handleError));
+
   }
 
   // Add new Hero

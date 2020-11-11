@@ -39,6 +39,7 @@
     "rxjs": "~6.6.0",
     "service": "^0.1.4",
     "swagger-ui": "^3.36.0",
+    "tapable": "^2.1.1",
     "tappable": "^1.1.0",
     "tslib": "^2.0.0",
     "uuid": "^8.3.1",
