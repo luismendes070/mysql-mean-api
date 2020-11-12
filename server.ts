@@ -8,6 +8,12 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
+function init(API_KEY:string){
+  if(this.env.equals(API_KEY)){
+    console.log('init API_KEY');
+  }
+}
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
