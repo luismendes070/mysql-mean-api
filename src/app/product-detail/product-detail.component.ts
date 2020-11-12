@@ -9,26 +9,12 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  
+
   @Input() product: Product;
-   private route: ActivateRoute;
+   // private route: ActivateRoute;
    private productService: ProductService;
   // addMode: boolean;
-  
-  constructor() {
-    
-  }
-
-  constructor(private productService:ProductService, private route:ActivateRoute) {
-    
-  }
 
   ngOnInit(): void {
-    // this.route.params.forEach(params: Params) => {
-
-      // this.productService.getProduct(+params['id']).subscribe((product: IProduct) => {
-        // this.product = product;
-      // })
-      // this.addMode = false;
-    } 
+    }
   }

@@ -16,7 +16,7 @@ import {
   HttpTestingController,
   HttpClientTestingModule,
 } from '@angular/common/http/testing';
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject, tick, fakeAsync} from '@angular/core/testing';
 
 providedIn: 'root';
 import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
@@ -24,9 +24,12 @@ import { IssTrackingDataService } from 'src\\app\\iss-tracking-data.service';
 import {HarnessLoader} from '@angular/cdk/testing';
 import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
 
+// tslint:disable-next-line:prefer-const
 let loader: HarnessLoader;
 
-it('should run new macro task callback with delay after call tick with millis',fakeAsync(() => {
+declare var require: any;
+
+it('should run new macro task callback with delay after call tick with millis', fakeAsync(() => {
      function nestedTimer(cb: () => any): void {
        setTimeout(() => setTimeout(() => cb()));
      }
@@ -38,7 +41,7 @@ it('should run new macro task callback with delay after call tick with millis',f
      expect(callback).toHaveBeenCalled();
    }));
 
-   it('should calback async load exists', () => {
+it('should calback async load exists', () => {
 
   // assert
   const index = require('index.html');
@@ -46,6 +49,7 @@ it('should run new macro task callback with delay after call tick with millis',f
   // a
   expect(index).toBe(index);
 
+  // @ts-ignore
   return fail(true);
-  
+
 });

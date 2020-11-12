@@ -16,6 +16,6 @@
       "es2018",
       "dom"
     ],
-    "types":["node","mocha","jasmine","typescript","body-parser","jest","webpack"]
+    "types":["node","webpack-env","mocha","jasmine","typescript","body-parser","jest","karma"]
   }
 }

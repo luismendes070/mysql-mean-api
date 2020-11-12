@@ -12,17 +12,9 @@ import { PRODUCTS } from './mock-products';
 @Injectable({ providedIn: 'root' })
 export class ProductService {
 
-  private products: Product[] = [];
+  private products: Product[];
 
-  constructor(private http: HttpClient) {
+  // constructor(private http: HttpClient) {}
 
-  }
 
-  getProduct(product_id: number): Observable<Product> {
-    return this.getProducts().pipe(
-      map((products) =>
-        products.find((product) => product.product_id === product_id)
-      )
-    );
-  }
 }

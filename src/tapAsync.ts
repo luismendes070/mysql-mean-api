@@ -1,4 +1,12 @@
-compiler.hooks.compile.tap('MyPlugin', params => {
+// Can be imported from webpack package
+ var webpack = require('webpack');
+ var config = require('./webpack.config.js');
+
+// new webpack.WebpackOptionsDefaulter().process(config);
+// Create a new compiler instance
+const compiler = new webpack.Compiler();
+
+ compiler.hooks.compile.tap('MyPlugin', params => {
   console.log('Synchronously tapping the compile hook.');
 });
 

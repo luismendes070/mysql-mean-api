@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Product as IProduct } from './product';
@@ -15,10 +15,5 @@ export class Product extends EntityCollectionServiceBase<IProduct> {
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('Product', serviceElementsFactory);
   }
-
-
-
-}
-
 
 }
