@@ -27,10 +27,11 @@ export class AppComponent extends Component implements Product{
   width: number;
   price: number;
   rating: number;
-  product_id: number;
+  id: number;
 
   form = new FormGroup({});
 
+  // tslint:disable-next-line:typedef
   onSubmit({ valid, value }) {
     console.log('onSubmit...\n\n');
     console.log(value);

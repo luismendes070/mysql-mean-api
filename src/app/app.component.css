@@ -1,3 +1,14 @@
+body{
+  margin: 10px;
+  paddding: 10px;
+}
+
+div{
+  margin:10px;
+  paddding: 10px;
+  border: 1px solid black;
+}
+
 .logo {
 
   padding: 10px;
@@ -27,16 +38,16 @@
 
 .degrauMenor{
 	color : blue;
-	border: 10px solid black;	
+	border: 10px solid black;
 }
 
 .degrauMaior{
 	color : green;
-	border: 100px solid black;	
+	border: 100px solid black;
 }
 
 p.ex1 {
-  border: 1px solid red; 
+  border: 1px solid red;
   padding-bottom: 25px;
 }
 

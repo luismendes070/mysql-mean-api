@@ -1,17 +1,6 @@
-
-
-<p appHighlight>Highlight me!</p>
-
-
 <div *ngIf="model.product" class="title">{{model.product.title}}</div>
 
-<div *ngIf="model.product" class="title">{{model.product.title}}</div>
-
-<ul>
-  <li *ngFor="let product of model.products">{{product.title}}</li>
-</ul>
-
-<div [ngSwitch]="model.product?.product_id">
+<div [ngSwitch]="model.product?.id">
   <app-happy-hero    *ngSwitchCase="'happy'"    [product]="model.product"></app-happy-hero>
   <app-sad-hero      *ngSwitchCase="'sad'"      [product]="model.product"></app-sad-hero>
   <app-confused-hero *ngSwitchCase="'confused'" [product]="model.product"></app-confused-hero>
@@ -38,8 +27,7 @@
   <div class="ex1">ut labore et dolore magna aliqua.</div>
 </div>
 
-<!-- <input type="checkbox" id="uploader" [checked]="showUploader" (click)="toggleUploader()"> -->
-<label for="uploader">Uploader</label>
+
 
 <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
   <formly-form
@@ -48,22 +36,55 @@
     [options]="options"
     [form]="form"
   >
-    <button class=".enviar">Enviar</button>
+    <div>
+
+      <input type="submit" id="uploader"  (click)="onSubmit()" ngModel>
+
+      <label for="uploader">Anexar Arquivo .json</label>
+
+	<input type="submit" description="Anexar Arquivo .json" autofocus>
+
+      <button class=".enviar">Enviar</button>
+
+	</div>
   </formly-form>
 </form>
 
 <app-form-debug [form]="form.value" [model]="model"></app-form-debug>
 
+<div>
 <label> Title </label>
+<label> Type </label>
+<label> Rating </label>
+<label> Price </label>
+<label> Created </label>
+<label> Action </label>
+</div>
 
-<mat-button> ENVIAR </mat-button>
+<div class="productsList">
+<div *ngIf="model.product" class="title">{{model.product.title}}</div>
+
+<ul>
+  <li *ngFor="let product of model.products">{{product.title}}</li>
+</ul>
+</div>
+
+
 
 <div class="duasColunas">
-<p class="coluna1">
-  <app-products>
-    {{ model.products[0].title }}{{ model.products[0].type }}{{ model.products[0].description }}{{ model.product[0].price }}{{ model.products[0].rating }}<mat-button class=".editar">EDITAR</mat-button><mat-button class=".excluir">EXCLUIR</mat-button>
-  </app-products>
-</p>
 
-<nav class="coluna2">External Links</nav>
+<div class="coluna1">
+  <app-products>
+    {{ model.products[0].title }}
+
+	{{ model.products[0].type }}
+
+	{{ model.products[0].description }}{{ model.product[0].price }}{{ model.products[0].rating }}<mat-button class=".editar">EDIT</mat-button><mat-button class=".excluir">DELETE</mat-button>
+  </app-products>
+</div>
+
+<div class="coluna2">
+<nav>External Links</nav>
+</div>
+
 </div>

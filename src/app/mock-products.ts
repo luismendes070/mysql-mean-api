@@ -10,7 +10,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 28.1,
     rating: 4,
-    product_id: 0,
+    id: 0,
   },
   {
     title: 'Sweet fresh stawberry',
@@ -21,7 +21,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 29.45,
     rating: 4,
-    product_id: 1,
+    id: 1,
   },
   {
     title: 'Asparagus',
@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 18.95,
     rating: 3,
-    product_id: 2,
+    id: 2,
   },
   {
     title: 'Green smoothie',
@@ -44,7 +44,7 @@ export const PRODUCTS: Product[] = [
     width: 399,
     price: 17.68,
     rating: 4,
-    product_id: 3,
+    id: 3,
   },
   {
     title: 'Raw legums',
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 17.11,
     rating: 2,
-    product_id: 4,
+    id: 4,
   },
   {
     title: 'Baking cake',
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     width: 675,
     price: 11.14,
     rating: 4,
-    product_id: 5,
+    id: 5,
   },
   {
     title: 'Pesto with basil',
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 18.19,
     rating: 2,
-    product_id: 6,
+    id: 6,
   },
   {
     title: 'Hazelnut in black ceramic bowl',
@@ -90,7 +90,7 @@ export const PRODUCTS: Product[] = [
     width: 301,
     price: 27.35,
     rating: 0,
-    product_id: 7,
+    id: 7,
   },
   {
     title: 'Fresh stawberry',
@@ -101,7 +101,7 @@ export const PRODUCTS: Product[] = [
     width: 399,
     price: 28.59,
     rating: 4,
-    product_id: 8,
+    id: 8,
   },
   {
     title: 'Lemon and salt',
@@ -112,7 +112,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 15.79,
     rating: 5,
-    product_id: 9,
+    id: 9,
   },
   {
     title: 'Homemade bread',
@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
     width: 301,
     price: 17.48,
     rating: 3,
-    product_id: 10,
+    id: 10,
   },
   {
     title: 'Legums',
@@ -134,7 +134,7 @@ export const PRODUCTS: Product[] = [
     width: 399,
     price: 14.77,
     rating: 0,
-    product_id: 11,
+    id: 11,
   },
   {
     title: 'Fresh tomato',
@@ -145,7 +145,7 @@ export const PRODUCTS: Product[] = [
     width: 903,
     price: 16.3,
     rating: 2,
-    product_id: 12,
+    id: 12,
   },
   {
     title: 'Healthy breakfast',
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
     width: 350,
     price: 13.02,
     rating: 2,
-    product_id: 13,
+    id: 13,
   },
   {
     title: 'Green beans',
@@ -168,7 +168,7 @@ export const PRODUCTS: Product[] = [
     width: 300,
     price: 28.79,
     rating: 1,
-    product_id: 14,
+    id: 14,
   },
   {
     title: 'Baked stuffed portabello mushrooms',
@@ -180,7 +180,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 20.31,
     rating: 1,
-    product_id: 15,
+    id: 15,
   },
   {
     title: 'Strawberry jelly',
@@ -191,7 +191,7 @@ export const PRODUCTS: Product[] = [
     width: 600,
     price: 14.18,
     rating: 1,
-    product_id: 16,
+    id: 16,
   },
   {
     title: 'Pears juice',
@@ -202,7 +202,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 19.49,
     rating: 4,
-    product_id: 17,
+    id: 17,
   },
   {
     title: 'Fresh pears',
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 15.12,
     rating: 5,
-    product_id: 18,
+    id: 18,
   },
   {
     title: 'Caprese salad',
@@ -225,7 +225,7 @@ export const PRODUCTS: Product[] = [
     width: 600,
     price: 16.76,
     rating: 5,
-    product_id: 19,
+    id: 19,
   },
   {
     title: 'Oranges',
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     width: 274,
     price: 21.48,
     rating: 4,
-    product_id: 20,
+    id: 20,
   },
   {
     title: 'Vegan food',
@@ -248,7 +248,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 29.66,
     rating: 4,
-    product_id: 21,
+    id: 21,
   },
   {
     title: 'Breakfast with muesli',
@@ -259,7 +259,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 22.7,
     rating: 2,
-    product_id: 22,
+    id: 22,
   },
   {
     title: 'Honey',
@@ -270,7 +270,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 17.01,
     rating: 2,
-    product_id: 23,
+    id: 23,
   },
   {
     title: 'Breakfast with cottage',
@@ -281,7 +281,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 14.05,
     rating: 1,
-    product_id: 24,
+    id: 24,
   },
   {
     title: 'Strawberry smoothie',
@@ -293,7 +293,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 28.86,
     rating: 2,
-    product_id: 25,
+    id: 25,
   },
   {
     title: 'Strawberry and mint',
@@ -304,7 +304,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 26.21,
     rating: 4,
-    product_id: 26,
+    id: 26,
   },
   {
     title: 'Ricotta',
@@ -315,7 +315,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 27.81,
     rating: 5,
-    product_id: 26,
+    id: 26,
   },
   {
     title: 'Cuban sandwiche',
@@ -327,7 +327,7 @@ export const PRODUCTS: Product[] = [
     width: 300,
     price: 18.5,
     rating: 4,
-    product_id: 27,
+    id: 27,
   },
   {
     title: 'Granola',
@@ -339,7 +339,7 @@ export const PRODUCTS: Product[] = [
     width: 300,
     price: 29.97,
     rating: 3,
-    product_id: 28,
+    id: 28,
   },
   {
     title: 'Smoothie with chia seeds',
@@ -351,7 +351,7 @@ export const PRODUCTS: Product[] = [
     width: 900,
     price: 25.26,
     rating: 5,
-    product_id: 29,
+    id: 29,
   },
   {
     title: 'Yogurt',
@@ -362,7 +362,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 27.61,
     rating: 4,
-    product_id: 30,
+    id: 30,
   },
   {
     title: 'Sandwich with salad',
@@ -373,7 +373,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 22.48,
     rating: 5,
-    product_id: 31,
+    id: 31,
   },
   {
     title: 'Cherry',
@@ -384,7 +384,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 14.35,
     rating: 5,
-    product_id: 32,
+    id: 32,
   },
   {
     title: 'Raw asparagus',
@@ -395,7 +395,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 22.97,
     rating: 4,
-    product_id: 33,
+    id: 33,
   },
   {
     title: 'Corn',
@@ -406,7 +406,7 @@ export const PRODUCTS: Product[] = [
     width: 300,
     price: 13.55,
     rating: 2,
-    product_id: 34,
+    id: 34,
   },
   {
     title: 'Vegan',
@@ -417,7 +417,7 @@ export const PRODUCTS: Product[] = [
     width: 398,
     price: 28.96,
     rating: 5,
-    product_id: 35,
+    id: 35,
   },
   {
     title: 'Fresh blueberries',
@@ -429,7 +429,7 @@ export const PRODUCTS: Product[] = [
     width: 321,
     price: 21.01,
     rating: 4,
-    product_id: 36,
+    id: 36,
   },
   {
     title: 'Smashed avocado',
@@ -441,7 +441,7 @@ export const PRODUCTS: Product[] = [
     width: 450,
     price: 25.88,
     rating: 0,
-    product_id: 37,
+    id: 37,
   },
   {
     title: 'Italian ciabatta',
@@ -453,7 +453,7 @@ export const PRODUCTS: Product[] = [
     width: 565,
     price: 15.18,
     rating: 1,
-    product_id: 38,
+    id: 38,
   },
   {
     title: 'Rustic breakfast',
@@ -465,7 +465,7 @@ export const PRODUCTS: Product[] = [
     width: 307,
     price: 21.32,
     rating: 0,
-    product_id: 39,
+    id: 39,
   },
   {
     title: 'Sliced lemons',
@@ -477,7 +477,7 @@ export const PRODUCTS: Product[] = [
     width: 900,
     price: 27.14,
     rating: 2,
-    product_id: 40,
+    id: 40,
   },
   {
     title: 'Plums',
@@ -488,7 +488,7 @@ export const PRODUCTS: Product[] = [
     width: 299,
     price: 19.18,
     rating: 1,
-    product_id: 41,
+    id: 41,
   },
   {
     title: 'French fries',
@@ -499,7 +499,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 18.32,
     rating: 3,
-    product_id: 42,
+    id: 42,
   },
   {
     title: 'Strawberries',
@@ -511,7 +511,7 @@ export const PRODUCTS: Product[] = [
     width: 352,
     price: 15.13,
     rating: 3,
-    product_id: 43,
+    id: 43,
   },
   {
     title: 'Ground beef meat burger',
@@ -523,7 +523,7 @@ export const PRODUCTS: Product[] = [
     width: 675,
     price: 11.73,
     rating: 5,
-    product_id: 44,
+    id: 44,
   },
   {
     title: 'Tomatoes',
@@ -534,7 +534,7 @@ export const PRODUCTS: Product[] = [
     width: 675,
     price: 26.03,
     rating: 4,
-    product_id: 45,
+    id: 45,
   },
   {
     title: 'Basil',
@@ -545,7 +545,7 @@ export const PRODUCTS: Product[] = [
     width: 678,
     price: 15.19,
     rating: 4,
-    product_id: 46,
+    id: 46,
   },
   {
     title: 'Fruits bouquet',
@@ -556,7 +556,7 @@ export const PRODUCTS: Product[] = [
     width: 401,
     price: 18.18,
     rating: 1,
-    product_id: 47,
+    id: 47,
   },
   {
     title: 'Peaches on branch',
@@ -568,7 +568,7 @@ export const PRODUCTS: Product[] = [
     width: 400,
     price: 25.62,
     rating: 3,
-    product_id: 48,
+    id: 48,
   },
 ];
 

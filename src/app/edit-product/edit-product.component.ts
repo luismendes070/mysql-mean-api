@@ -25,7 +25,7 @@ export class EditProductComponent extends Component implements Product {
   width: number;
   price: number;
   rating: number;
-  product_id: number;
+  id: number;
 
   form = new FormGroup({});
 

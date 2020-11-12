@@ -28,33 +28,33 @@ describe('AppComponent', () => {
     }).compileComponents();
 
 
-    
 
-    //info using npm@6.14.8
+
+    // info using npm@6.14.8
 // info using node@v14.15.0
-it('error code ELIFECYCLE error errno 1 nvm use ', () => {
+    it('error code ELIFECYCLE error errno 1 nvm use ', () => {
   console.log('testing... ');
   // return fail(true);
 });
 
-it('should typescript 4.0.5', () => {
+    it('should typescript 4.0.5', () => {
   console.log('testing typescript 4.0.5 ... ');
-  let t = require('typescript');
+  const t = require('typescript');
   expect(t).toBe(t.version);
   // return fail(true);
 });
 
-it('should npm 6.14.8', () => {
+    it('should npm 6.14.8', () => {
   console.log('testing npm 6.14.8 ... ');
-  let npm = require('npm');
+  const npm = require('npm');
   // let node = require('node');
   expect('6.14.6').toBe(npm.version);
   // return fail(true);
 });
 
-it('should node 14.15.0', () => {
+    it('should node 14.15.0', () => {
   console.log('testing node 14.15.0 ... ');
-  let node = require('node');
+  const node = require('node');
   expect('14.15.0').toBe(node.version);
   // return fail(true);
 });
@@ -65,10 +65,15 @@ it('should node 14.15.0', () => {
     loader = TestbedHarnessEnvironment.loader(fixture);
 
   }
-  
- 
-  
+
+
+
   );
+});
+
+it('bootstrap', () => {
+
+  expect(AppComponent).toBe(null);
 });
 
 

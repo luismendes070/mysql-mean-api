@@ -32,7 +32,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './products/products.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ProductService } from './products/product.service';
@@ -80,6 +80,8 @@ import { ProductService } from './products/product.service';
   providers: [httpInterceptorProviders, ProductService],
   bootstrap: [AppComponent,
     MessagesComponent,
+	ProductService,
+	Product,
     ProductsComponent,
     ProductDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
