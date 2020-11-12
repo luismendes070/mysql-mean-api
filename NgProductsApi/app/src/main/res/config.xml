@@ -1,0 +1,4 @@
+<platform name="android">
+  <config-file parent="/*" target="AndroidManifest.xml">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  </config-file>
