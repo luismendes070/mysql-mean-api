@@ -58,21 +58,12 @@
 
 <mat-button> ENVIAR </mat-button>
 
-<span>
+<div class="duasColunas">
+<p class="coluna1">
   <app-products>
-    {{ model.products[0].title }}
-
-    {{ model.products[0].type }}
-
-    {{ model.products[0].description }}
-
-    {{ model.product[0].price }}
-
-    {{ model.products[0].rating }}
-
-    <mat-button class=".editar">EDITAR</mat-button>
-    <mat-button class=".excluir">EXCLUIR</mat-button>
+    {{ model.products[0].title }}{{ model.products[0].type }}{{ model.products[0].description }}{{ model.product[0].price }}{{ model.products[0].rating }}<mat-button class=".editar">EDITAR</mat-button><mat-button class=".excluir">EXCLUIR</mat-button>
   </app-products>
-</span>
+</p>
 
-<nav>External Links</nav>
+<nav class="coluna2">External Links</nav>
+</div>

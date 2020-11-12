@@ -47,3 +47,15 @@ p.ex1 {
   width: 100px;
   height: 100px;
 }
+
+.duasColunas{
+	color: green;
+}
+
+.coluna1{
+	float: left
+}
+
+.coluna2{
+	color: red;
+}
