@@ -27,13 +27,18 @@ describe('AppComponent', () => {
       declarations: [AppComponent],
     }).compileComponents();
 
+    let comp: AppComponent;
 
 
+//inject
+    comp = TestBed.inject(AppComponent);
+    
 
     // info using npm@6.14.8
 // info using node@v14.15.0
     it('error code ELIFECYCLE error errno 1 nvm use ', () => {
-  console.log('testing... ');
+      console.log('testing... ');
+      expect(comp);
   // return fail(true);
 });
 

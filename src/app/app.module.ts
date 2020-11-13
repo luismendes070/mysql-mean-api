@@ -32,24 +32,22 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ProductService } from './products/product.service';
+import { Product } from './products/product.service';
 // import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    ProductsComponent,
     ProductDetailComponent,
     // FileValueAccessor,
     FormlyFieldFile,
     
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'com.example.ngproductsapi.ServerApp' }),
     FormsModule,
     BrowserAnimationsModule,
     CommonModule,
@@ -77,12 +75,10 @@ import { ProductService } from './products/product.service';
     }),
   ],
 
-  providers: [httpInterceptorProviders, ProductService],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent,
     MessagesComponent,
-	ProductService,
-	Product,
-    ProductsComponent,
+    Product,
     ProductDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -4,6 +4,17 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+	{
+	"type": "android-webview",
+            "request": "attach",
+            "name": "Attach to Android WebView",
+            "webRoot": "${workspaceFolder}/www",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:/*": "${workspaceFolder}/*"
+            }
+	}
+	,
         {
             "type": "node",
             "request": "launch",
