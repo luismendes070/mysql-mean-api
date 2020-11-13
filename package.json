@@ -122,5 +122,8 @@
     "serve:ssr": "node dist/products/server/main.js",
     "build:ssr": "ng build --prod && ng run products:server:production",
     "prerender": "ng run products:prerender"
+  },
+  "engines": {
+    "node": "14.15.0"
   }
 }
