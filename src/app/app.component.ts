@@ -50,7 +50,7 @@ export class AppComponent extends Component implements Product{
       type: 'file',
       templateOptions: {
         type: 'text',
-        label: 'products Anexar arquivo json'
+        label: 'Anexar arquivo json'
       }
     },
   ];

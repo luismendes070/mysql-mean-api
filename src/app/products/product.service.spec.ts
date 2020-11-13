@@ -1,11 +1,21 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { ProductService } from './product.service';
+
+// import { PRODUCTS } from './mock-products';
 
 describe('ProductService', () => {
   let service: ProductService;
 
-  beforeEach(() => {
+  const PRODUCTS[]: typeof(require('./mock-products'));
+
+  beforeEach(async () => {
+
+await TestBed.configureTestingModule({
+  declarations: [ProductService, PRODUCTS],
+  imports: []
+}).compileComponents();
+
     TestBed.configureTestingModule({});
     service = TestBed.inject(ProductService);
   });
@@ -13,4 +23,5 @@ describe('ProductService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
 });

@@ -34,8 +34,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { Product } from './products/product.service';
+import { ProductService } from './products/product.service';
 // import { ProductService } from './product.service';
+
+// import { NgModule } from '@angular/core';
+// import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
+import { entityConfig } from './products/entity-metadata';
 
 @NgModule({
   declarations: [
@@ -47,6 +54,10 @@ import { Product } from './products/product.service';
     
   ],
   imports: [
+    HttpClientModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot(entityConfig),
     BrowserModule.withServerTransition({ appId: 'com.example.ngproductsapi.ServerApp' }),
     FormsModule,
     BrowserAnimationsModule,
@@ -78,7 +89,7 @@ import { Product } from './products/product.service';
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent,
     MessagesComponent,
-    Product,
+    ProductService,
     ProductDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
