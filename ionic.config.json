@@ -1,11 +1,5 @@
 {
   "name": "products",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular",
-  "proxies": [
-    "path": "localhost",
-    "proxyUrl": "http://localhost:26309"
-  ]
+  "integrations": {},
+  "type": "angular"
 }
