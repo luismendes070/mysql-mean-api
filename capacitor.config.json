@@ -9,5 +9,6 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+    "windowsAndroidStudioPath": "E:\\Program Files\\Android\\canary\\android-studio\\bin\\studio64.exe"
 }
