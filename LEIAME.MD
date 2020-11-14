@@ -1,10 +1,11 @@
 
+git tag -a v0.0 -m "hello world android device 0.0.0"
+
 ionic capacitor run android -l --host=localhost
 
 npx cap open android
 
 npx cap copy
-
 
 circleci  https://lab.coodesh.com/machadoluismendes/challenge-20200630.git
 
@@ -69,7 +70,7 @@ docker run
 
 npm install @types/jasmine --save-dev
 
-git tag -a v0.0 -m "hello world android device 0.0.0"
+
 
 
 
