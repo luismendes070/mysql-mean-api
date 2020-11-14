@@ -1,3 +1,9 @@
+import {inject, InjectionToken} from '@angular/core';
+import { ActionReducerMap } from '@ngrx/store';
+
+import { LoginService } from './login/login.service';
+import * as fromRoot from './reducers';
+
 // import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { AppComponent } from './app.component';
@@ -44,6 +50,14 @@ import { StoreModule } from '@ngrx/store';
 import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
 import { entityConfig } from './products/entity-metadata';
 
+export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<fromRoot.State>>('Registered Reducers', {
+  factory: () => {
+    const serv = inject(LoginService);
+    // return reducers synchronously
+    return serv.getReducers();
+  }
+});
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,9 +65,10 @@ import { entityConfig } from './products/entity-metadata';
     ProductDetailComponent,
     // FileValueAccessor,
     FormlyFieldFile,
-    
+
   ],
   imports: [
+    StoreModule.forRoot(REDUCER_TOKEN),
     HttpClientModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),

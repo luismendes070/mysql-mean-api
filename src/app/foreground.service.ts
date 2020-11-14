@@ -7,6 +7,7 @@ export class Foreground{
 
 constructor(public foregroundService: ForegroundService) { }
 
+// tslint:disable-next-line:typedef
 startService() {
  // Notification importance is optional, the default is 1 - Low (no sound or vibration)
  this.foregroundService.start('GPS Running', 'Background Service', 'drawable/fsicon');
@@ -17,7 +18,7 @@ stopService() {
  this.foregroundService.stop();
 }
 
-}//fim Foreground 
+}//fim Foreground
 
 
 @Injectable({

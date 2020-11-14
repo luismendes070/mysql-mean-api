@@ -258,7 +258,7 @@ module.exports = {
     // Allow to use await on module evaluation (Proposal)
   },
   plugins: [
-    // ...
+    HelloAsyncPlugin
   ],
   // list of additional plugins
   optimization: {

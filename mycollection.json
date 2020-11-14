@@ -1,0 +1,12 @@
+[{
+    "url": "https://ng-api-produtos.herokuapp.com/",
+    "user_id": "1",
+    "id": "1",
+    "token_id": "17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4",
+},
+{
+    "url": "http://localhost:3000/api/products",
+    "user_id": "2",
+    "id": "2",
+    "token_id": "",
+}]

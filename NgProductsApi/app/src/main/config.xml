@@ -1,4 +1,10 @@
 <platform name="android">
   <config-file parent="/*" target="AndroidManifest.xml">
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
   </config-file>
+  <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
