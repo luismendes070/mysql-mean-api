@@ -2,6 +2,26 @@
   "name": "products",
   "version": "0.0.1",
   "private": "true",
+  "scripts": {
+    "capacitor": "ionic capacitor serve",
+    "reload": "ionic capacitor copy android && ionic capacitor run android -l --host=localhost",
+    "server": "node node_modules/ngf-server/server.js --proxy.conf.json",
+    "postinstall": "ngcc",
+    "build": "webpack --config prod.config.js",
+    "start": "ng serve",
+    "ng": "ng",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e --configuration=test",
+    "prettier": "ng prettier",
+    "test:dev": "ng test --browsers=ChromeHeadlessCI",
+    "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI",
+    "start:dev": "webpack-dev-server",
+    "dev:ssr": "ng run products:serve-ssr",
+    "serve:ssr": "node dist/products/server/main.js",
+    "build:ssr": "ng build --prod && ng run products:server:production",
+    "prerender": "ng run products:prerender"
+  },
   "dependencies": {
     "@angular-devkit/build-angular": "^0.1002.0",
     "@angular/animations": "~10.1.1",
@@ -16,6 +36,7 @@
     "@angular/platform-server": "~10.1.1",
     "@angular/router": "~10.1.1",
     "@angular/service-worker": "~10.1.1",
+    "@capacitor/android": "^2.4.2",
     "@capacitor/core": "2.4.2",
     "@ionic-native/foreground-service": "^5.29.0",
     "@ionic-native/intel-security": "^5.29.0",
@@ -79,18 +100,21 @@
     "cache-loader": "^4.1.0",
     "codecov": "^3.5.0",
     "codelyzer": "^6.0.0",
+    "gulp": "^4.0.2",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "jest": "^24.8.0",
-    "karma": "~5.0.0",
+    "karma": "^5.0.9",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-webpack": "^4.0.2",
     "mocha": "^8.2.1",
     "mocha-loader": "^5.1.5",
+    "mocha-webpack": "^1.1.0",
     "nodemon": "^2.0.6",
     "offline-plugin": "^5.0.7",
     "parallel-webpack": "^2.6.0",
@@ -99,33 +123,17 @@
     "ts-node": "^8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.2",
-    "webpack": "^5.3.2 || ^2.2.0",
+    "webpack": "^5.4.0",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0",
-    "webpack-env": "^0.8.0"
+    "webpack-env": "^0.8.0",
+    "webpack-stream": "^6.1.0"
   },
   "peerDependencies": {
-    "webpack": "^1.12.11 || ~2 || ~3 || ~4"
-  },
-  "scripts": {
-    "server": "node node_modules/ngf-server/server.js --proxy.conf.json",
-    "postinstall": "ngcc",
-    "build": "webpack --config prod.config.js",
-    "start": "ng serve",
-    "ng": "ng",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e --configuration=test",
-    "prettier": "ng prettier",
-    "test:dev": "ng test --browsers=ChromeHeadlessCI",
-    "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI",
-    "start:dev": "webpack-dev-server",
-    "dev:ssr": "ng run products:serve-ssr",
-    "serve:ssr": "node dist/products/server/main.js",
-    "build:ssr": "ng build --prod && ng run products:server:production",
-    "prerender": "ng run products:prerender"
+    "webpack": "^4.6.0",
+    "@ionic-native/core": "^5.1.0"
   },
   "engines": {
-    "node": "14.15.0"
+    "node": "^14.15.0"
   }
 }

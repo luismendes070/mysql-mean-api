@@ -1,0 +1,13 @@
+{
+  "appId": "com.example.ngproductsapi",
+  "appName": "products",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
