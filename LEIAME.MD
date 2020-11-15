@@ -82,6 +82,14 @@ docker run
 
 npm install @types/jasmine --save-dev
 
+Firebase
+
+Ver
+adb logcat -s FirebaseCrashlytics
+
+Desativar
+adb shell setprop log.tag.FirebaseCrashlytics INFO
+
 
 
 
