@@ -11,7 +11,10 @@ import { environment } from './environments/environment';
  import { defineCustomElements } from '@ionic/pwa-elements/loader';
  import { Firebase } from '@ionic-native/firebase/ngx';
 
-export class Main implements Tappable{
+ 
+const { Tappable } = require('tapable');
+
+export class Main{
 
   private token = '17QTEYADHJ824YIWHK983IUQR2Q9W8AHKSJ9RIHWO1T8IQGEW3T7IR31GIU4';
 
@@ -31,12 +34,7 @@ this.firebase.onTokenRefresh()
 
   }// end constructor
 
-
-
-}// fim Main
-
-
-// Call the element loader after the platform has been bootstrapped
+  // Call the element loader after the platform has been bootstrapped
 // defineCustomElements(window);
 
 if (environment.production) {
@@ -48,3 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
      platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
    });
+
+
+
+}// fim Main
+
+

@@ -1,4 +1,8 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\src"
+  ],
+  "SelectedNode": "\\gulpfile.js",
   "PreviewInSolutionExplorer": false
 }

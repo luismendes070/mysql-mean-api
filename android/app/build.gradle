@@ -52,4 +52,22 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+	
+	// Import the Firebase BoM
+  implementation platform('com.google.firebase:firebase-bom:26.0.0')
+
+  // When using the BoM, you don't specify versions in Firebase library dependencies
+
+  // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+  implementation 'com.google.firebase:firebase-auth'
+  implementation 'com.google.firebase:firebase-firestore'
+  
+  apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services' // Google Services Gradle plugin
+
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+    
+	
 }
