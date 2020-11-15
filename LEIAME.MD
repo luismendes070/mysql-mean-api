@@ -1,6 +1,18 @@
 
 git tag -a v0.0 -m "hello world android device 0.0.0"
 
+npx cap doctor
+
+npx cap serve
+
+npx cap open android
+
+npx cap serve
+
+ionic build//capacitor
+
+ionic capacitor serve
+
 ionic capacitor run android -l --host=localhost
 
 npx cap open android
