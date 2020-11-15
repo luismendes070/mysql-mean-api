@@ -3,6 +3,9 @@
 //webpack docs
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
+
+gulp.task('serve:before', ['default']);
+
 gulp.task('default', function() {
   return gulp.src('src/entry.js')
     .pipe(webpack({

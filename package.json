@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": "true",
   "scripts": {
+    "gulp":"gulp",
     "capacitor": "ionic capacitor serve",
     "reload": "ionic capacitor copy android && ionic capacitor run android -l --host=localhost",
     "server": "node node_modules/ngf-server/server.js --proxy.conf.json",
