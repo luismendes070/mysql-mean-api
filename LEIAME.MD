@@ -1,6 +1,8 @@
 
 git tag -a v0.0 -m "hello world android device 0.0.0"
 
+docker-compose up -d// docker selenium
+
 npx cap doctor
 
 npx cap serve
