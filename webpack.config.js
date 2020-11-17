@@ -1,29 +1,19 @@
 const path = require('path');
 
 module.exports = {
+  entry: {
+    app: "./src/app.js",
+    search: "./src/search.js",
+  },
   output: {
-    filename: 'my-first-webpack.bundle.js'
+    filename: "bundle.js",
+    path: __dirname + "/dist"
   },
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
-    ]
+      { test: /\.txt$/, use: "raw-loader" },
+      { test: /\\.css$/, use: "css-loader" },
+      { test: /\\.ts$/, use: "ts-loader" },
+    ],
   },
-  
-  module: {
-  rules: [
-    {
-      test: /\.m?js$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        }
-      }
-    }
-  ]
-}
-
-  
 };
