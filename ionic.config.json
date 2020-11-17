@@ -5,7 +5,7 @@
       "name": "products",
       "integrations": {},
       "type": "angular",
-      "root": "angular/src"
+      "root": "angular"
     },
     "myApp": {
       "name": "myApp",
