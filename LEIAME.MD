@@ -4,6 +4,8 @@ git tag -a v0.0 -m "hello world android device 0.0.0"
 es2015
 
 ROOT DIRECTORY IONIC MULTIAPP
+ng test 
+ng serve
 ionic capacitor run android -l --host=localhost
 
 ng run app:build

@@ -81,6 +81,7 @@
     "mysql": "^2.18.1",
     "negotiator": "^0.6.2",
     "ngf-server": "^1.0.2",
+    "node-fetch": "^2.6.1",
     "node-forge": "^0.10.0",
     "postcss": "^8.1.7",
     "pug": "^3.0.0",
