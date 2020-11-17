@@ -1,6 +1,13 @@
 
 git tag -a v0.0 -m "hello world android device 0.0.0"
 
+es2015
+
+ROOT DIRECTORY IONIC MULTIAPP
+ionic capacitor run android -l --host=localhost
+
+ng run app:build
+
 docker-compose up -d// docker selenium
 
 npx cap doctor
@@ -15,7 +22,7 @@ ionic build//capacitor
 
 ionic capacitor serve
 
-ionic capacitor run android -l --host=localhost
+
 
 npx cap open android
 
@@ -91,6 +98,13 @@ adb logcat -s FirebaseCrashlytics
 
 Desativar
 adb shell setprop log.tag.FirebaseCrashlytics INFO
+
+depurar proctator com selenium
+protractor debugging/failureConf.js
+
+PWA CHROME
+npx @bubblewrap/cli build
+
 
 
 

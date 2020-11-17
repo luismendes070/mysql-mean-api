@@ -13,6 +13,10 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('products app is running!');
   });
 
+  it('should bundle webpack', () => {
+    fail(true);
+  });
+
   it('should build ionic android', () => {
     fail(true);
   });

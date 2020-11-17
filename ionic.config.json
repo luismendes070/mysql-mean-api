@@ -1,7 +1,31 @@
 {
+"defaultProject": "products",
+  "projects": {
+    "products": {
+      "name": "products",
+      "integrations": {},
+      "type": "angular",
+      "root": "angular/src"
+    },
+    "myApp": {
+      "name": "myApp",
+      "integrations": {},
+      "type": "angular",
+      "root": "pwa/myApp"
+    },
+    "products": {
+      "name": "products",
+      "integrations": {},
+      "type": "angular",
+      "root": "pwa/products"
+    }
+  }
+,
   "name": "products",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    }
   },
   "type": "angular"
 }

@@ -1,94 +1,46 @@
-plugins {
-    id 'com.android.application'
-}
-
 apply plugin: 'com.android.application'
-// Add the following line:
-apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 
 android {
-    compileSdkVersion 30
-
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.example.ngproductsapi"
-        minSdkVersion 26
-        targetSdkVersion 30
+        applicationId "io.ionic.starter"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
-      debug {
-        applicationIdSuffix ".debug"
-        debuggable true
-      }
-
-      /**
-       * The `initWith` property allows you to copy configurations from other build types,
-       * then configure only the settings you want to change. This one copies the debug build
-       * type, and then changes the manifest placeholder and application ID.
-       */
-      staging {
-        initWith debug
-        manifestPlaceholders = [hostName:"internal.example.com"]
-        applicationIdSuffix ".debugStaging"
-      }
-
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
 }
 
 dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-	
-	// Import the Firebase BoM
-   implementation platform('com.google.firebase:firebase-bom:26.0.0')
-  
+apply from: 'capacitor.build.gradle'
 
-  // When using the BoM, you don't specify versions in Firebase library dependencies
-
-  // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
-  implementation 'com.google.firebase:firebase-auth'
-  implementation 'com.google.firebase:firebase-firestore'
-  
-  apply plugin: 'com.android.application'
-
-apply plugin: 'com.google.gms.google-services' // Google Services Gradle plugin
-
-// Apply the Crashlytics Gradle plugin
-apply plugin: 'com.google.firebase.crashlytics'
-
-
-
-
-// Import the Firebase BoM
-  implementation platform('com.google.firebase:firebase-bom:26.1.0')
-
-  // When using the BoM, you don't specify versions in Firebase library dependencies
-
-  // Declare the dependency for the Firebase SDK for Google Analytics
-  implementation 'com.google.firebase:firebase-analytics'
-
-  // Declare the dependencies for any other desired Firebase products
-  // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
-  implementation 'com.google.firebase:firebase-auth'
-  implementation 'com.google.firebase:firebase-firestore'
-    
-	
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
 }

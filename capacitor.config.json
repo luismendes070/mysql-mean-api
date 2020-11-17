@@ -1,14 +1,16 @@
 {
-  "appId": "com.example.ngproductsapi",
+  "appId": "io.ionic.starter",
   "appName": "products",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www",
+  "webDir": "angular/src",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
     }
   },
-  "cordova": {},
-    "windowsAndroidStudioPath": "E:\\Program Files\\Android\\canary\\android-studio\\bin\\studio64.exe"
+  "windowsAndroidStudioPath": "E:\\Program Files\\Android\\canary\\android-studio\\bin"
+  ,
+  "cordova": {}
 }
+
