@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: "./src/app.js",
-    search: "./src/search.js",
+    app: ".angular/src/app.js",
   },
   output: {
     filename: "bundle.js",

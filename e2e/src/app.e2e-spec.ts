@@ -13,6 +13,10 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('products app is running!');
   });
 
+  it('should build ionic android', () => {
+    fail(true);
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
