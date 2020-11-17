@@ -6,6 +6,32 @@ const fs = require('fs');
 const { promisify } = require('util');
 const dotenv = require('dotenv');
 
+const webpack = require('webpack-stream');
+
+// gulp.task('serve:before', ['default']);
+
+gulp.task('default', function() {
+  return gulp.src('src/entry.js')
+    .pipe(webpack({
+      // Any configuration options...
+    }))
+    .pipe(gulp.dest('dist/'));
+});
+
+//gulp docs
+function defaultTask(cb) {
+  // place code for your default task here
+
+
+
+
+  cb();
+}
+
+
+
+exports.default = defaultTask
+
 // load environment variables
 const result = dotenv.config();
 
@@ -72,29 +98,6 @@ exports.release = gulp.series(
 //peerDependencies
 
 //webpack docs
-gulp = require('gulp');
-const webpack = require('webpack-stream');
-
-gulp.task('serve:before', ['default']);
-
-gulp.task('default', function() {
-  return gulp.src('src/entry.js')
-    .pipe(webpack({
-      // Any configuration options...
-    }))
-    .pipe(gulp.dest('dist/'));
-});
-
-//gulp docs
-function defaultTask(cb) {
-  // place code for your default task here
-  
-  
+// try{ gulp = require('gulp')}catch(e){console.log('\n gulp webpack failed \n...')};
 
 
-  cb();
-}
-
-
-
-exports.default = defaultTask
