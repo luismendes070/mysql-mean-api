@@ -1,4 +1,5 @@
 it('should connect IONIC ERR_CONNECTION_REFUSED',()=>{
-	//expect().toBe();
+        const gulp = require('gulp');
+        expect(gulp).toBeNotNull(gulp);
 }
 );
