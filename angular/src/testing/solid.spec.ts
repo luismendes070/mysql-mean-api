@@ -34,6 +34,8 @@ it('should liskov substitution principle', async {
 
 it('should interface segregation principle', async {
 	
+	
+	
 	}
 );
 

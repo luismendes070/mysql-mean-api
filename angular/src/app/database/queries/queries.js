@@ -1,12 +1,6 @@
-import {getRepository} from "typeorm";
-
-const user = await getRepository(JSonProducts)
-    .createQueryBuilder("product")
-    .where("product.product_id = :product_id", { product_id: 1 })
-    .getOne();
-
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
+private var connection;
 
 var mysql = require("mysql");
 var connectionDb4free = mysql.createConnection({
@@ -23,19 +17,34 @@ var connectionLocalhost = mysql.createConnection({
   database: "api_fullstack_challenge",
 });
 
-await connectionLocalhost.connect();
+function setConnection(host:string, user:string, passsword:string, database:string){
+    
+    connection = mysql.createConnection({
+  host: host,
+  user: user,
+  password: password,
+  database: database,
+});
 
-console.log("connection connected...");
+}
+
+function getConnection(){
+    return connection;
+}
+
+// await connectionLocalhost.connect();
+
+// console.log("connection connected...");
 
 
 
 //async await fetch then then
 
-export async function query(query) {
+export async function query(query:var, conection:var) {
   
-  connectionLocalhost.connect();
+  connection.connect();
 
-  return connectionLocalhost.query(query, function (error, results, fields) {
+  return connection.query(query, function (error, results, fields) {
   if (error) throw error;
   console.log("The solution is: ", results[0].solution);
   });

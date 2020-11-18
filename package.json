@@ -1,17 +1,17 @@
 {
-"name": "products",
-"version": "0.1.2",
-"description": "ionic pwa angular android",
-"private": "true",
-"scripts": {
-        "electron": "npx cap open @capacitor-community/electron --verbose",
+    "name": "products",
+    "version": "0.1.2",
+    "description": "ionic pwa angular android",
+    "private": "true",
+    "scripts": {
         "gulp": "gulp --verbose",
         "serve": "ionic cap serve",
         "reload": "ionic cap copy android && cd android && ionic cap run android -l --host=localhost",
         "server": "node node_modules/ngf-server/server.js --proxy.conf.json",
+	"prerender": "ng run products:prerender",
         "postinstall": "ngcc",
         "build": "webpack --config webpack.prod.js --verbose",
-        "start": "webpack serve --open --config webpack.dev.js --verbose",
+        "start": "node angular\/src\/index.js",
         "ng": "ng",
         "test": "ng test",
         "lint": "ng lint",
@@ -23,23 +23,24 @@
         "dev:ssr": "ng run products:serve-ssr",
         "serve:ssr": "node dist/products/server/main.js",
         "build:ssr": "ng build --prod && ng run products:server:production",
-        "prerender": "ng run products:prerender"
+	"electron": "npx cap open @capacitor-community/electron --verbose"
     },
     "dependencies": {
         "@angular-devkit/build-angular": "^0.1002.0",
         "@angular/animations": "~10.1.1",
         "@angular/cdk": "^10.2.7",
-        "@angular/common": "~10.1.1",
-        "@angular/compiler": "^10.2.3",
-        "@angular/core": "~10.1.1",
+        "@angular/common": "^2.0.0",
+        "@angular/core": "^2.4.10",
         "@angular/fire": "^6.0.5",
-        "@angular/forms": "~10.1.1",
+        "@angular/forms": "^2.0.0",
+        "@angular/http": "^2.0.0",
         "@angular/material": "^10.2.7",
-        "@angular/platform-browser": "~10.1.1",
-        "@angular/platform-browser-dynamic": "~10.1.1",
+        "@angular/platform-browser": "^2.0.0",
+        "@angular/platform-browser-dynamic": "^2.0.0",
         "@angular/platform-server": "~10.1.1",
-        "@angular/router": "~10.1.1",
+        "@angular/router": "^3.0.0",
         "@angular/service-worker": "~10.1.1",
+        "@angular/upgrade": "^2.0.0",
         "@capacitor-community/electron": "^1.3.1",
         "@capacitor/android": "^2.4.2",
         "@capacitor/core": "2.4.2",
@@ -67,7 +68,7 @@
         "base64-url": "^2.3.3",
         "body-parser": "^1.19.0",
         "cordova-plugin-ionic-webview": "^5.0.0",
-        "core-js": "^3.7.0",
+        "core-js": "^2.4.1",
         "cors": "^2.8.5",
         "debug": "^4.2.0",
         "express": "^4.17.1",
@@ -80,44 +81,33 @@
         "moment-locales-webpack-plugin": "^1.2.0",
         "mysql": "^2.18.1",
         "negotiator": "^0.6.2",
+        "ng2f-bootstrap": "0.0.4",
+        "ng2f-server": "^0.2.3",
         "ngf-server": "^1.0.2",
         "node-fetch": "^2.6.1",
         "node-forge": "^0.10.0",
         "postcss": "^8.1.7",
         "pug": "^3.0.0",
+        "reflect-metadata": "^0.1.3",
         "restify": "^8.5.1",
-        "rxjs": "~6.6.0",
+        "rxjs": "^5.0.0-beta.12",
         "service": "^0.1.4",
         "swagger-ui": "^3.36.2",
+        "systemjs": "0.19.27",
         "tapable": "^2.1.1",
         "tappable": "^1.1.0",
         "tslib": "^2.0.0",
         "uuid": "^8.3.1",
         "wait-port": "^0.2.9",
         "yargs-parser": "^20.2.4",
-        "zone.js": "~0.10.2",
-        "@angular/common": "2.0.0",
-        "@angular/compiler": "2.0.0",
-        "@angular/core": "2.0.0",
-        "@angular/forms": "2.0.0",
-        "@angular/http": "2.0.0",
-        "@angular/platform-browser": "2.0.0",
-        "@angular/platform-browser-dynamic": "2.0.0",
-        "@angular/router": "3.0.0",
-        "@angular/upgrade": "2.0.0",
-        "core-js": "^2.4.1",
-        "reflect-metadata": "^0.1.3",
-        "rxjs": "5.0.0-beta.12",
-        "systemjs": "0.19.27",
-        "zone.js": "^0.6.23",
-        "ng2f-bootstrap": "0.0.4",
-        "ng2f-server": "^0.2.3"
+        "zone.js": "^0.6.23"
     },
     "devDependencies": {
         "@angular-builders/custom-webpack": "^10.0.1",
         "@angular-builders/dev-server": "^7.3.1",
         "@angular-devkit/architect": "^0.1002.0",
         "@angular/cli": "~10.1.1",
+        "@angular/compiler": "^2.4.10",
         "@angular/compiler-cli": "~10.1.1",
         "@babel/core": "^7.12.3",
         "@babel/preset-env": "^7.12.1",
@@ -136,6 +126,7 @@
         "cache-loader": "^4.1.0",
         "codecov": "^3.5.0",
         "codelyzer": "^6.0.0",
+        "concurrently": "^2.2.0",
         "conventional-changelog-cli": "^2.1.1",
         "conventional-github-releaser": "^3.1.5",
         "conventional-recommended-bump": "^6.0.11",
@@ -173,15 +164,14 @@
         "ts-node": "^8.10.2",
         "tslint": "~6.1.0",
         "typescript": "~3.9.2",
+        "typings": "^1.5.0",
         "webpack": "^4.44.2",
         "webpack-cli": "^4.2.0",
         "webpack-dev-server": "^3.11.0",
         "webpack-env": "^0.8.0",
         "webpack-merge": "^5.4.0",
         "webpack-stream": "^6.1.1",
-        "workbox-webpack-plugin": "^6.0.0-rc.0",
-        "concurrently": "^2.2.0",
-        "typings": "^1.3.2"
+        "workbox-webpack-plugin": "^6.0.0-rc.0"
     },
     "peerDependencies": {
         "webpack": "^4.6.0",
@@ -205,15 +195,19 @@
         "core-js": "^3.7.0",
         "babel-loader": "^8.2.1"
     },
-	"jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
-
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "jsx"
+        ],
+        "moduleDirectories": [
+            "node_modules",
+            "bower_components",
+            "shared"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+            "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+        }
     }
-  }
 }
-
-
