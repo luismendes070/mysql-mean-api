@@ -1,4 +1,6 @@
- // import { Sequelize, Jsonproduct } from "./database.ts";
+ /* global process, _ */
+
+// import { Sequelize, Jsonproduct } from "./database.ts";
 
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
