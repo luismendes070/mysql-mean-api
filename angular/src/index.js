@@ -15,4 +15,4 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+// export component Index document.body.appendChild(component());

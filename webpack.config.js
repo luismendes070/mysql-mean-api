@@ -1,13 +1,13 @@
 const path = require('path');
+import * as webpack from "webpack";
 
 module.exports = {
-  entry: {
-    app: "./angular/src/app.js",
-  },
-  output: {
-    filename: "bundle.js",
-    path: __dirname + "/dist"
-  },
+	mode: 'development',
+	entry: './angular/src/index.js',
+	output: {
+		path: path.resolve(__dirname + "/dist"),
+		filename: "foo.bundle.js"
+		},
   module: {
     rules: [
       { test: /\.txt$/, use: "raw-loader" },
@@ -16,3 +16,5 @@ module.exports = {
     ],
   },
 };
+
+export default config;
