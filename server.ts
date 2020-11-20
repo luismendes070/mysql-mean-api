@@ -8,8 +8,10 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
-function init(API_KEY:string){
-  if(this.env.equals(API_KEY)){
+function init( API_KEY : string ){
+
+  if( this.env.equals( API_KEY ) ){
+
     console.log('init API_KEY');
   }
 }

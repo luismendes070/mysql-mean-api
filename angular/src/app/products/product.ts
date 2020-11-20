@@ -10,3 +10,4 @@ export interface IProduct {
   price: number;
   rating: number;
 }
+

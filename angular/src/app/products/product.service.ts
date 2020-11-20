@@ -16,4 +16,38 @@ export class ProductService extends EntityCollectionServiceBase<IProduct> {
     super('Product', serviceElementsFactory);
   }
 
+  getMockProducts(){
+    return this.http.get("/assets/data/products.json");
+  }
+
+  //getProducts(method) Observable<Object>.pipe<any,any>(op1: OperatorFunction<Object, any>, op2:Operator);
+  getRemoteProducts(){
+    
+    return this.http.get("
+
+https://ng-api-produtos.herokuapp.com/api/products
+
+    ").pipe(
+
+
+map(
+  (data:any) => {
+    console.log("Before mapping: ", data);
+
+    return data.data.children;
+  }
+)
+
+
+    ).filter(
+
+(data:any) => {
+  return true;
+}
+
+
+    );
+
+  }
+
 }

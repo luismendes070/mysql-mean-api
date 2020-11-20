@@ -1,6 +1,7 @@
 body{
   margin: 10px;
   paddding: 10px;
+  @use "material-components-web/material-components-web";
 }
 
 div{

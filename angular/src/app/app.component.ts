@@ -1,3 +1,11 @@
+import * as mdc from 'material-components-web';
+const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
+// OR
+import {checkbox} from 'material-components-web';
+const checkbox = new checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
+
+
+
 import {
 	Component,
 	OnInit,

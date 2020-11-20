@@ -1,11 +1,17 @@
 {
 "defaultProject": "products",
   "projects": {
-    "products": {
+    "angular": {
       "name": "products",
       "integrations": {},
       "type": "angular",
-      "root": "angular"
+      "root": "angular/src"
+    },
+    "android": {
+      "name": "products",
+      "integrations": {},
+      "type": "android",
+      "root": "android"
     },
     "myApp": {
       "name": "myApp",
@@ -13,7 +19,7 @@
       "type": "angular",
       "root": "pwa/myApp"
     },
-    "products": {
+    "./pwa/products": {
       "name": "products",
       "integrations": {},
       "type": "angular",

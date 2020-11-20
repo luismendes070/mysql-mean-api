@@ -190,15 +190,6 @@
     "engines": {
         "node": "^14.15.0"
     },
-    "bundleDependencies": {
-        "webpack": "^4.6.0",
-        "@ionic-native/core": "^5.1.0",
-        "mocha": "^5.2.0",
-        "negotiator": "^0.6.2",
-        "debug": "^4.2.0",
-        "core-js": "^3.7.0",
-        "babel-loader": "^8.2.1"
-    },
     "jest": {
         "moduleFileExtensions": [
             "js",
