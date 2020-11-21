@@ -3,25 +3,32 @@
   "projects": {
     "angular": {
       "name": "products",
-      "integrations": {},
+      "integrations": {"enabled": true},
       "type": "angular",
       "root": "angular/src"
     },
     "android": {
       "name": "products",
-      "integrations": {},
+      "integrations": {"capacitor": {
+      "enabled": true
+    }},
       "type": "android",
       "root": "android"
     },
     "myApp": {
       "name": "myApp",
-      "integrations": {},
+      "integrations": {"capacitor": {
+      "enabled": true
+    }},
       "type": "angular",
       "root": "pwa/myApp"
     },
     "./pwa/products": {
       "name": "products",
-      "integrations": {},
+      "integrations": {"capacitor": {
+      "enabled": true
+    }
+},
       "type": "angular",
       "root": "pwa/products"
     }
@@ -30,7 +37,7 @@
   "name": "products",
   "integrations": {
     "capacitor": {
-      "enabled": false
+      "enabled": true
     }
   },
   "type": "angular"
