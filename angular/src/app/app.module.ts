@@ -5,7 +5,7 @@ import { LoginService } from './login/login.service';
 import * as fromRoot from './reducers';
 
 // import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Injector , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -40,7 +40,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ProductService } from './products/product.service';
+// import { ProductService } from './products/product.service';
 // import { ProductService } from './product.service';
 
 // import { NgModule } from '@angular/core';
@@ -49,8 +49,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
 import { entityConfig } from './products/entity-metadata';
+import {ProductsComponent} from './products/products.component';
 
-export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<fromRoot.State>>('Registered Reducers', {
+// import {ProductService} from './product.service';
+
+export const REDUCER_TOKEN =
+  new InjectionToken<ActionReducerMap<fromRoot.State>>('Registered Reducers', {
   factory: () => {
     const serv = inject(LoginService);
     // return reducers synchronously
@@ -73,7 +77,9 @@ export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<fromRoot.State>
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
-    BrowserModule.withServerTransition({ appId: 'com.example.ngproductsapi.ServerApp' }),
+    BrowserModule.withServerTransition(
+      { appId: 'com.example.ngproductsapi.ServerApp' }
+      ),
     FormsModule,
     BrowserAnimationsModule,
     CommonModule,
@@ -104,8 +110,12 @@ export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<fromRoot.State>
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent,
     MessagesComponent,
-    ProductService,
+    ProductsComponent,
     ProductDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private injector:Injector){
+    const element = createElement(AppComponent, {injector:this.injector});
+  }
+}

@@ -3,18 +3,19 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
-import { AppServerModule } from './src/main.server';
+// import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 
 import { AppServerModuleNgFactory } from './src/app/app.server.module.ngfactory';
+import {AppServerModule} from './main.server';
 
-import { OnInit } from '@angular/core';
+// import { OnInit } from '@angular/core';
 
-export class Server implements OnInit {
+/*export class Server implements OnInit {
   API_KEY: string;
   ngOnInit(): void {
 
-    
+
 
     // throw new Error('Method not implemented.');
   }
@@ -23,8 +24,8 @@ export class Server implements OnInit {
     this.API_KEY = API_KEY;
     this.API_KEY = require('.env')["API_KEY"];
     }
-  
-}
+
+}*/
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
@@ -35,8 +36,7 @@ export function app() {
   server.engine(
     'html',
     ngExpressEngine({
-      bootstrap: 
-      AppServerModuleNgFactory,
+      bootstrap: AppServerModuleNgFactory,
     })
   );
 
@@ -44,7 +44,7 @@ export function app() {
     'html',
     ngExpressEngine({
       bootstrap: AppServerModule,
-      
+
     })
   );
 

@@ -1,6 +1,12 @@
 
 
 var express = require("express");
+var csurf = require('csurf')
+//var express = require('express')
+var cookieParser = require('cookie-parser')
+ 
+//var app = express()
+//app.use(cookieParser())
 // var bodyParser = require("body-parser");
 // var mongodb = require("mongodb");
 // var ObjectID = mongodb.ObjectID;
@@ -13,6 +19,7 @@ var express = require('express')
   , db      = require('./models');
 
 var app = express();
+app.use(cookieParser())
 
 // all environments
 app.set('port', process.env.PORT || 3000);
