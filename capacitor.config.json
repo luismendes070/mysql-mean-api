@@ -3,7 +3,7 @@
   "appName": "products",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "angular/src",
+  "webDir": "src",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

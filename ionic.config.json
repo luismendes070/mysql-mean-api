@@ -1,44 +1,18 @@
 {
-"defaultProject": "products",
+  "defaultProject": "products",
   "projects": {
     "angular": {
       "name": "products",
-      "integrations": {"enabled": true},
+      "integrations": {
+        "enabled": true
+      },
       "type": "angular",
-      "root": "angular/src"
+      "root": "src"
     },
-    "android": {
-      "name": "products",
-      "integrations": {"capacitor": {
-      "enabled": true
-    }},
-      "type": "android",
-      "root": "android"
-    },
-    "myApp": {
-      "name": "myApp",
-      "integrations": {"capacitor": {
-      "enabled": true
-    }},
-      "type": "angular",
-      "root": "pwa/myApp"
-    },
-    "./pwa/products": {
-      "name": "products",
-      "integrations": {"capacitor": {
-      "enabled": true
-    }
-},
-      "type": "angular",
-      "root": "pwa/products"
+    "products": {
+      "integrations": {
+        "capacitor": {}
+      }
     }
   }
-,
-  "name": "products",
-  "integrations": {
-    "capacitor": {
-      "enabled": true
-    }
-  },
-  "type": "angular"
 }
