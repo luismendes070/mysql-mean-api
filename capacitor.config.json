@@ -1,7 +1,7 @@
 {
   "appId": "io.ionic.starter",
   "appName": "products",
-  "bundledWebRuntime": false,
+  "bundledWebRuntime": true,
   "npmClient": "npm",
   "webDir": "src",
   "plugins": {
